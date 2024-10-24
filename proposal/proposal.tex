@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[margin=1.0in]{geometry}
+\usepackage[margin=0.50in]{geometry}
 \usepackage{amsmath, amsthm, amsfonts, amssymb}
 \usepackage{graphicx}
 \usepackage{float}
@@ -15,21 +15,23 @@
 
 \newcommand{\authorspace}{1.5em}
 
-\title{Classification of Rating \& Tags for Codeforces Competitve Programming Problems}
+\title{Classification of Rating \& Tags for Codeforces Competitive Programming Problems}
 \author{Nilay Tripathi \hspace{\authorspace} Nicholas Belov \hspace{\authorspace} Sriraam Ramakrishnan}
 \date{October 20, 2024}
 
 \begin{document}
-		\maketitle
+        \maketitle
+        \section{Background \& Introduction}
+ Codeforces\footnote{\href{https://codeforces.com}{https://codeforces.com/}} is a website centered around competitive programming, where problems are designed to test ingenuity in mathematics and coding knowledge. The problems are parameterized puzzles and competitors must write programs that solve the puzzles for all possible valid inputs, subject to time and memory constraints. \par Codeforces hosts competitive programming contests roughly once a week which have on average 30000 participants worldwide. After each contest, problems are released free for anyone to attempt on the Codeforces platform. When released each problem is assigned a numeric rating which correlates with the problem's general level of difficulty. Additionally, each problem is assigned specific tags, which give the mathematical and/or programming topics that are deemed most relevant to solving the problem. \par 
+ For our project, we would like to construct a model that predicts either the numeric difficulty rating or the tags (or both, if time and resources permit). 
+        \section{Example Problem \& Tags}
+ Consider the problem G. Perfect Matching\footnote{\href{G. Perfect Matching}{https://codeforces.com/contest/2002/problem/G}} from a  recent Codeforces contest. This is a particularly challenging problem with a rating of 3400. The problem's tags include \textit{bitmasks}, \textit{bruteforce}, \textit{hashing}, and \textit{meet-in-the-middle}, which suggest that the solution requires a combination of each of these techniques.  \par
+ A decent competitive programmer would be able to immediately infer that this problem is brute force given it's extremely tight bound of $n \leq 20$. An even better competitive programmer should be able to tell that meet-in-the-middle and bitmasks might be useful which is commonly true in problems that use $MEX$. \par
+ What is much harder to work out is whether or not the problem is hard. Normally in contest, a competitor can check the total number of people that solved a problem to get an estimate of the problem's difficulty. We will not be providing such information to the model to see if it can infer the difficulty organically. 
+        \section{Obtaining Data}    
+ We think this project neatly fits into the ``novel dataset'' category. Obtaining data will likely be achieved through scraping the Codeforces website with a Python script to retrieve the problem text, tags, and ratings for a subset of the problems on the website. 
 
-		\section{Background \& Introduction}
-		Codeforces\footnote{\href{https://codeforces.com}{https://codeforces.com/}} is a website centered around competitive programming, where problems are designed to test ingenuity in mathematics and coding knowledge. Codeforces allows users to participate in contests, which consist of several problems. Each problem is assigned a numeric rating which correlates with the problem's general level of difficulty. Each problem is also assigned specific tags, which give the mathematical and/or programming skills that are deemed most relevant to solving the problem. \par 
-
-		For our project, we would like to construct a model which predicts either the numeric difficulty rating or the tags (or both, if time and resources permit). 
-
-		\section{Obtaining Data}
-		We think this project neatly fits into the ``novel dataset'' category. Obtaining data will likely be achieved through scraping the Codeforces website with a Python scraping script to retrieve the problem text, tags, and rating for a subset of the problems on the website. 
-
-		\section{Methods}
-		The most appropriate model for this task seems to be a recurrent neural network (RNN), but we may also explore more complicated models such as transformers to extract features and patterns from the source text.
+        \section{Methods}
+ The most appropriate model for this task seems to be a recurrent neural network (RNN), but we may also explore more complicated models such as transformers to extract features and patterns from the source text.
 \end{document}
+
