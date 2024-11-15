@@ -10,3 +10,4 @@ key = os.getenv("KEY")
 secret = os.getenv("SECRET")
 time_stamp = datetime.now().timestamp()
 
+print(time_stamp)
