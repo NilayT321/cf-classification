@@ -1,12 +1,5 @@
 import requests
-import hashlib
-from dotenv import load_dotenv
-import os 
-from datetime import datetime
+import csv
+from bs4 import BeautifulSoup 
 
-load_dotenv()
-
-key = os.getenv("KEY")
-secret = os.getenv("SECRET")
-time_stamp = datetime.now().timestamp()
-
+base_url = r"https://codeforces.com/problemset"
