@@ -4,6 +4,7 @@ from seleniumbase import Driver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import csv
+import time
 
 NUM_PAGES = 100 
 
@@ -21,7 +22,7 @@ page_0 = str(driver.page_source.encode())
 page_0_parser = BeautifulSoup(page_0, "html.parser")
 
 # Loop through all the rows. Except first row, which is header 
-with open("problems.csv", "w") as f:
+with open("problemsSecondHalf.csv", "w") as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
     # Scraper stopped in the middle. 
@@ -36,6 +37,9 @@ with open("problems.csv", "w") as f:
         # Get the page source 
         source = str(driver.page_source.encode())
         source_parser = BeautifulSoup(source, "html.parser")
+
+        # Wait for the page to load 
+        time.sleep(8)
 
         # Find the table 
         table = source_parser.find('table', attrs = {'class' : 'problems'})
