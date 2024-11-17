@@ -3,6 +3,7 @@ from selenium import webdriver
 from seleniumbase import Driver 
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
+import lxml
 import csv
 import time
 
@@ -19,15 +20,15 @@ driver.get(r"https://codeforces.com/problemset")
 
 # Landing page 
 page_0 = str(driver.page_source.encode())
-page_0_parser = BeautifulSoup(page_0, "html.parser")
+page_0_parser = BeautifulSoup(page_0, "lxml")
 
 # Loop through all the rows. Except first row, which is header 
-with open("problemsSecondHalf.csv", "w") as f:
+with open("problemsThirdSet.csv", "w") as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
     # Scraper stopped in the middle. 
-    # Restart at page 47
-    for page in range(47, NUM_PAGES + 1):
+    # Restart at page 69
+    for page in range(69, NUM_PAGES + 1):
     # For the first page, don't do anything. We're already at the landing page 
     # Otherwise, we need to go to a new URL 
         if page != 1:
@@ -83,7 +84,7 @@ with open("problemsSecondHalf.csv", "w") as f:
 
                 # Get the HTML and create a new parser for it 
                 subpage_source = str(driver.page_source.encode())
-                subpage_parser = BeautifulSoup(subpage_source, "html.parser")
+                subpage_parser = BeautifulSoup(subpage_source, "lxml")
 
                 # Find the div tag of the problem statement
                 prob_div = subpage_parser.find('div', attrs = {'class' : 'problem-statement'})
