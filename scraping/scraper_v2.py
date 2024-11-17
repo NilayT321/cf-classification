@@ -23,7 +23,7 @@ page_0 = str(driver.page_source.encode())
 page_0_parser = BeautifulSoup(page_0, "lxml")
 
 # Loop through all the rows. Except first row, which is header 
-with open("problemsThirdSet.csv", "w") as f:
+with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
     # Scraper stopped in the middle. 
@@ -81,26 +81,22 @@ with open("problemsThirdSet.csv", "w") as f:
             try:
                 # Find the link of the problem name and click it 
                 driver.find_element(By.LINK_TEXT, name).click()
-
-                # Get the HTML and create a new parser for it 
-                subpage_source = str(driver.page_source.encode())
-                subpage_parser = BeautifulSoup(subpage_source, "lxml")
-
-                # Find the div tag of the problem statement
-                prob_div = subpage_parser.find('div', attrs = {'class' : 'problem-statement'})
-
-                # Tenth div in the problem statement has the relevant text. 
-                # This was manually counted and hard coded. 
-                # Of fucking course, this is the only div which doesn't have an id or class
-                prob_div = prob_div.find_all('div')[10]
-
-                prob_statement = clean_output(prob_div.get_text())
             except:
                 # No need to do anything fancy. Just move on 
-                pass 
-            finally:
-                # Tell the driver to go back to the main page 
-                driver.back()
+                continue 
+            
+            # Get the HTML and create a new parser for it 
+            subpage_source = str(driver.page_source.encode())
+            subpage_parser = BeautifulSoup(subpage_source, "lxml")
+            # Find the div tag of the problem statement
+            prob_div = subpage_parser.find('div', attrs = {'class' : 'problem-statement'})
+
+            # Tenth div in the problem statement has the relevant text. 
+            # This was manually counted and hard coded. 
+            # Of fucking course, this is the only div which doesn't have an id or class
+            prob_div = prob_div.find_all('div')[10]
+
+            prob_statement = clean_output(prob_div.get_text())
 
             # Finally, write a row to the csv file 
             prob_writer.writerow([index, name, tags, prob_statement, rating])
