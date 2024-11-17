@@ -29,10 +29,10 @@ page_0 = driver.page_source.encode()
 skip = ["1939B", "1939A", "1938M", "1938L"]
 
 num_pages = 100 # Number of pages to scrape
-with open('problems2.csv', 'w') as f:
+with open('problems4.csv', 'w') as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
-    for page in range(7, num_pages + 1):
+    for page in range(75, num_pages + 1):
         # Suburl differs depending on number of pages 
         # The first time, url doesn't matter 
         # Otherwise, we add .../problemset/page/<page-num> to the end 
@@ -60,30 +60,35 @@ with open('problems2.csv', 'w') as f:
             rating = lines[x+3]
 
             print(f"Looking for problem name: {name}")
-            # Find the link of the problem and click it 
-            driver.find_element(By.LINK_TEXT, name).click()
-
-            # Get the source of the HTML
-            page_source = str(driver.page_source.encode())
-
-            # Beautiful soup parser 
-            parser = BeautifulSoup(page_source, "html.parser")
-
-            # Find the problem statement by the tag and class
-            prob_div = parser.find('div', attrs = {'class' : 'problem-statement'})
-
-            # Some problems are in PDF form so will have no HTML. In this case, skip them 
-            if prob_div is None:
-                continue
             
-            paragraphs = [str(p_tag.get_text()) for p_tag in prob_div.find_all("p")]
-            prob_text = '\n'.join(paragraphs)
+            try:
+                # Find the link of the problem and click it 
+                driver.find_element(By.LINK_TEXT, name).click()
 
-            # Go back to the previous page in the driver 
-            driver.back()
+                # Get the source of the HTML
+                page_source = str(driver.page_source.encode())
 
-            # Write the row 
-            prob_writer.writerow([index, name, tags, prob_text, rating])
+                # Beautiful soup parser 
+                parser = BeautifulSoup(page_source, "html.parser")
+
+                # Find the problem statement by the tag and class
+                prob_div = parser.find('div', attrs = {'class' : 'problem-statement'})
+
+                # Some problems are in PDF form so will have no HTML. In this case, skip them 
+                if prob_div is None:
+                    continue
+
+                paragraphs = [str(p_tag.get_text()) for p_tag in prob_div.find_all("p")]
+                prob_text = '\n'.join(paragraphs)
+
+                # Go back to the previous page in the driver 
+                driver.back()
+
+                # Write the row 
+                prob_writer.writerow([index, name, tags, prob_text, rating])
+            except:
+                driver.back()
+                continue
 
         print(f"Finished page {page}")
 

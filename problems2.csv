@@ -1,0 +1,913 @@
+1924A "Did We Get Everything Covered?" "constructive algorithms, dp, greedy, shortest paths, strings" "You are given two integers n and k along with a string s.
+Your task is to check whether all possible strings of length n that can be formed using the first k lowercase English alphabets occur as a subsequence of s. If the answer is NO, you also need to print a string of length n that can be formed using the first k lowercase English alphabets which does not occur as a subsequence of s.
+If there are multiple answers, you may print any of them.
+Note: A string a is called a subsequence of another string b if a can be obtained by deleting some (possibly zero) characters from b without changing the order of the remaining characters.
+The first line of input contains a single integer t(1\xe2\x89\xa4t\xe2\x89\xa4105), the number of test cases.
+The first line of each test case contains 3 integers n(1\xe2\x89\xa4n\xe2\x89\xa426),k(1\xe2\x89\xa4k\xe2\x89\xa426),m(1\xe2\x89\xa4m\xe2\x89\xa41000), where n and k are the same as described in the input and m is the length of the string s.
+The second line of each test case contains a single string s of length m, comprising only of the first k lowercase English alphabets.
+It is guaranteed that the sum of m and the sum of n over all test cases does not exceed 106.
+For each test case, print YES if all possible strings of length n that can be formed using the first k lowercase English alphabets occur as a subsequence of s, else print NO.
+If your answer is NO, print a string of length n that can be formed using the first k lowercase English alphabets which does not occur as a subsequence of s in the next line.
+You may print each letter of YES or NO in any case (for example, YES, yES, YeS will all be recognized as a positive answer).
+For the first test case, all possible strings (aa, ab, ba, bb) of length 2 that can be formed using the first 2 English alphabets occur as a subsequence of abba.
+For the second test case, the string aa is not a subsequence of abb." "1500  x14094"
+1923F Shrink-Reverse "binary search, brute force, greedy, hashing, implementation, string suffix structures, strings" "You are given a binary string s of length n (a string consisting of n characters, and each character is either 0 or 1).
+Let\'s look at s as at a binary representation of some integer, and name that integer as the value of string s. For example, the value of 000 is 0, the value of 01101 is 13, ""100000"" is 32 and so on.
+You can perform at most k operations on s. Each operation should have one of the two following types: 
+What is the minimum value of s you can achieve by performing at most k operations on s?
+The first line contains two integers n and k (2\xe2\x89\xa4n\xe2\x89\xa45\xe2\x8b\x85105; 1\xe2\x89\xa4k\xe2\x89\xa4n) \xe2\x80\x94 the length of the string s and the maximum number of operations.
+The second line contains the string s of length n consisting of characters 0 and/or 1. 
+Additional constraint on the input: s contains at least one 1.
+Print a single integer \xe2\x80\x94 the minimum value of s you can achieve using no more than k operations. Since the answer may be too large, print it modulo 109+7.
+Note that you need to minimize the original value, not the remainder.
+In the first example, one of the optimal strategies is the following: 
+In the second example, one of the optimal strategies is the following: " "2800  x378"
+1923E "Count Paths" "data structures, dfs and similar, dp, dsu, graphs, trees" "You are given a tree, consisting of n vertices, numbered from 1 to n. Every vertex is colored in some color, denoted by an integer from 1 to n.
+A simple path of the tree is called beautiful if: 
+Count the number of the beautiful simple paths of the tree. Note that paths are considered undirected (i. e. the path from x to y is the same as the path from y to x).
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of testcases.
+The first line of each testcase contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of vertices in the tree.
+The second line contains n integers c1,c2,\xe2\x80\xa6,cn (1\xe2\x89\xa4ci\xe2\x89\xa4n) \xe2\x80\x94 the color of each vertex.
+The i-th of the next n\xe2\x88\x921 lines contains two integers vi and ui (1\xe2\x89\xa4vi,ui\xe2\x89\xa4n; vi\xe2\x89\xa0ui) \xe2\x80\x94 the i-th edge of the tree.
+The given edges form a valid tree. The sum of n over all testcases doesn\'t exceed 2\xe2\x8b\x85105.
+For each testcase, print a single integer \xe2\x80\x94 the number of the beautiful simple paths of the tree." "2000  x3931"
+1923D Slimes "binary search, constructive algorithms, data structures, greedy, two pointers" "There are n slimes placed in a line. The slimes are numbered from 1 to n in order from left to right. The size of the i-th slime is ai.
+Every second, the following happens: exactly one slime eats one of its neighbors and increases its size by the eaten neighbor\'s size. A slime can eat its neighbor only if it is strictly bigger than this neighbor. If there is no slime which is strictly bigger than one of its neighbors, the process ends.
+For example, suppose n=5, a=[2,2,3,1,4]. The process can go as follows:
+For each slime, calculate the minimum number of seconds it takes for this slime to be eaten by another slime (among all possible ways the process can go), or report that it is impossible.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa43\xe2\x8b\x85105) \xe2\x80\x94 the number of slimes.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4109).
+The sum of n over all test cases doesn\'t exceed 3\xe2\x8b\x85105.
+For each test case, print n integers. The i-th integer should be equal to the minimum number of seconds it takes for the i-th slime to be eaten by another slime or -1 if it is impossible." "1800  x6886"
+1923C "Find B" "constructive algorithms, greedy" "An array a of length m is considered good if there exists an integer array b of length m such that the following conditions hold: 
+You are given an array c of length n. Each element of this array is greater than 0.
+You have to answer q queries. During the i-th query, you have to determine whether the subarray cli,cli+1,\xe2\x80\xa6,cri is good.
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains two integers n and q (1\xe2\x89\xa4n,q\xe2\x89\xa43\xe2\x8b\x85105) \xe2\x80\x94 the length of the array c and the number of queries.
+The second line of each test case contains n integers c1,c2,\xe2\x80\xa6,cn (1\xe2\x89\xa4ci\xe2\x89\xa4109).
+Then q lines follow. The i-th of them contains two integers li and ri (1\xe2\x89\xa4li\xe2\x89\xa4ri\xe2\x89\xa4n) \xe2\x80\x94 the borders of the i-th subarray.
+Additional constraints on the input: the sum of n over all test cases does not exceed 3\xe2\x8b\x85105; the sum of q over all test cases does not exceed 3\xe2\x8b\x85105.
+For each query, print YES if the subarray is good. Otherwise, print NO.
+You can output each letter of the answer in any case (upper or lower). For example, the strings yEs, yes, Yes, and YES will all be recognized as positive responses." "1400  x15295"
+1923B "Monsters Attack!" "dp, greedy, implementation" "You are playing a computer game. The current level of this game can be modeled as a straight line. Your character is in point 0 of this line. There are n monsters trying to kill your character; the i-th monster has health equal to ai and is initially in the point xi.
+Every second, the following happens:
+Can you survive and kill all n monsters without letting any of them reach your character?
+The first line of the input contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa43\xe2\x8b\x85104) \xe2\x80\x94 the number of test cases.
+Each test case consists of three lines:
+Additional constraint on the input: the sum of n over all test cases does not exceed 3\xe2\x8b\x85105.
+For each test case, print YES if you can kill all n monsters before they reach your character, or NO otherwise.
+You can output each letter of the answer in any case (upper or lower). For example, the strings yEs, yes, Yes, and YES will all be recognized as positive responses.
+In the first example, you can act as follows:
+In the second example, you can fire only 1 bullet, so you can kill only one of the two monsters during the 1-st second. Then, the remaining monster moves closer and kills your character." "1100  x17816"
+1923A "Moving Chips" "greedy, implementation" "There is a ribbon divided into n cells, numbered from 1 to n from left to right. Each cell either contains a chip or is free.
+You can perform the following operation any number of times (possibly zero): choose a chip and move it to the closest free cell to the left. You can choose any chip that you want, provided that there is at least one free cell to the left of it. When you move the chip, the cell where it was before the operation becomes free.
+Your goal is to move the chips in such a way that they form a single block, without any free cells between them. What is the minimum number of operations you have to perform?
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases.
+Each test case consists of two lines:
+Additional constraint on the input: in each test case, at least one cell contains a chip.
+For each test case, print one integer \xe2\x80\x94 the minimum number of operations you have to perform so that all chips form a single block without any free cells between them.
+In the first example, you can perform the operation on the chip in the 7-th cell. The closest free cell to the left is the 5-th cell, so it moves there. After that, all chips form a single block.
+In the second example, all chips are already in a single block. Same for the third example." "800  x24793"
+1922F "Replace on Segment" "dp, graph matchings" "You are given an array a1,a2,\xe2\x80\xa6,ana1,a2,\xe2\x80\xa6,an, where each element is an integer from 1 to x.
+You can perform the following operation with it any number of times:
+In other words, you choose a subsegment of the array and an integer from 1 to x which does not appear in that subsegment, and replace every element in the subsegment with that chosen integer.
+Your goal is to make all elements in the array equal. What is the minimum number of operations that you have to perform?
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases.
+Each test case consists of two lines:
+Additional constraint on the input: the sum of n over all test cases does not exceed 500.
+For each test case, print one integer \xe2\x80\x94 the minimum number of operations you have to perform." "2500  x1423"
+1922E "Increasing Subsequences" "bitmasks, constructive algorithms, divide and conquer, greedy, math" "Let\'s recall that an increasing subsequence of the array a is a sequence that can be obtained from it by removing some elements without changing the order of the remaining elements, and the remaining elements are strictly increasing (i.\xe2\x80\x89e ab1<ab2<\xe2\x8b\xaf<abk and b1<b2<\xe2\x8b\xaf<bk). Note that an empty subsequence is also increasing.
+You are given a positive integer X. Your task is to find an array of integers of length at most 200, such that it has exactly X increasing subsequences, or report that there is no such array. If there are several answers, you can print any of them.
+If two subsequences consist of the same elements, but correspond to different positions in the array, they are considered different (for example, the array [2,2] has two different subsequences equal to [2]).
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases.
+The only line of each test case contains a single integer X (2\xe2\x89\xa4X\xe2\x89\xa41018).
+For each query, print the answer to it. If it is impossible to find the required array, print -1 on the first line. Otherwise, print a positive integer n on the first line \xe2\x80\x94 the length of the array. On the second line, print n integers \xe2\x80\x94 the required array itself. If there are several answers, you can print any of them. All elements of the array should be in the range [\xe2\x88\x92109;109]." "1800  x7799"
+1922D "Berserk Monsters" "brute force, data structures, dsu, implementation, math" "Monocarp is playing a computer game (yet again). Guess what is he doing? That\'s right, killing monsters.
+There are n monsters in a row, numbered from 1 to n. The i-th monster has two parameters: attack value equal to ai and defense value equal to di. In order to kill these monsters, Monocarp put a berserk spell on them, so they\'re attacking each other instead of Monocarp\'s character.
+The fight consists of n rounds. Every round, the following happens:
+For each round, calculate the number of monsters that will die during that round.
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case consists of three lines:
+Additional constraint on the input: the sum of n over all test cases does not exceed 3\xe2\x8b\x85105.
+For each test case, print n integers. The i-th integer should be equal to the number of monsters that die during the i-th round.
+Explanation for the first test case of the example:
+During the first round, the following happens:
+After the first round, the monsters 1 and 4 stay alive.
+During the second round, the following happens:
+During the next three rounds, only the 4-th monster is alive, so nothing happens." "1900  x5753"
+1922C "Closest Cities" "greedy, implementation, math" "There are nn cities located on the number line, the ii-th city is in the point aiai. The coordinates of the cities are given in ascending order, so a1<a2<\xe2\x8b\xaf<ana1<a2<\xe2\x8b\xaf<an.
+The distance between two cities x and y is equal to |ax\xe2\x88\x92ay|.
+For each city i, let\'s define the closest city j as the city such that the distance between i and j is not greater than the distance between i and each other city k. For example, if the cities are located in points [0,8,12,15,20], then:
+The cities are located in such a way that for every city, the closest city is unique. For example, it is impossible for the cities to be situated in points [1,2,3], since this would mean that the city 2 has two closest cities (1 and 3, both having distance 1).
+You can travel between cities. Suppose you are currently in the city x. Then you can perform one of the following actions:
+You are given m queries. In each query, you will be given two cities, and you have to calculate the minimum number of coins you have to spend to travel from one city to the other city.
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case is given in the following format:
+Additional constraints on the input:
+For each query, print one integer \xe2\x80\x94 the minimum number of coins you have to spend.
+Let\'s consider the first two queries in the example from the statement:" "1300  x18691"
+1922B "Forming Triangles" "combinatorics, constructive algorithms, math, sortings" "You have nn sticks, numbered from 1 to n. The length of the i-th stick is 2ai.
+You want to choose exactly 3 sticks out of the given n sticks, and form a non-degenerate triangle out of them, using the sticks as the sides of the triangle. A triangle is called non-degenerate if its area is strictly greater than 0.
+You have to calculate the number of ways to choose exactly 3 sticks so that a triangle can be formed out of them. Note that the order of choosing sticks does not matter (for example, choosing the 1-st, 2-nd and 4-th stick is the same as choosing the 2-nd, 4-th and 1-st stick). 
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case consists of two lines:
+Additional constraint on the input: the sum of n over all test cases does not exceed 3\xe2\x8b\x85105.
+For each test case, print one integer \xe2\x80\x94 the number of ways to choose exactly 3 sticks so that a triangle can be formed out of them.
+In the first test case of the example, any three sticks out of the given 7 can be chosen.
+In the second test case of the example, you can choose the 1-st, 2-nd and 4-th stick, or the 1-st, 3-rd and 4-th stick.
+In the third test case of the example, you cannot form a triangle out of the given sticks with lengths 2, 4 and 8." "1200  x20812"
+1922A "Tricky Template" "constructive algorithms, implementation, strings" "You are given an integer n and three strings a,b,c, each consisting of n lowercase Latin letters.
+Let a template be a string t consisting of n lowercase and/or uppercase Latin letters. The string s matches the template t if the following conditions hold for all i from 1 to n: 
+Accordingly, the string doesn\'t match the template if the condition doesn\'t hold for at least one i.
+Determine whether there exists a template t such that the strings a and b match it, while the string c does not.
+The first line contains an integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains an integer n (1\xe2\x89\xa4n\xe2\x89\xa420) \xe2\x80\x94 the length of the given strings.
+The next three lines contain the strings a,b and c. Each string consists of exactly n lowercase Latin letters.
+For each testcase, print ""YES"" if there exists a template t such that the strings a and b match it, while the string c does not. Otherwise, print ""NO"".
+In the first test case, you can use the template ""C"". The first letter of strings a and b differ from \'c\', so they match the template. The first letter of string c equals \'c\', so it doesn\'t match.
+In the third test case, you can use the template ""CODEforces""." "800  x27086"
+1921G "Mischievous Shooter" "brute force, data structures, divide and conquer, dp, implementation" "Once the mischievous and wayward shooter named Shel found himself on a rectangular field of size n\xc3\x97m, divided into unit squares. Each cell either contains a target or not.
+Shel only had a lucky shotgun with him, with which he can shoot in one of the four directions: right-down, left-down, left-up, or right-up. When fired, the shotgun hits all targets in the chosen direction, the Manhattan distance to which does not exceed a fixed constant k. The Manhattan distance between two points (x1,y1) and (x2,y2) is equal to |x1\xe2\x88\x92x2|+|y1\xe2\x88\x92y2|.
+Shel\'s goal is to hit as many targets as possible. Please help him find this value.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases. Then follows the description of the test cases.
+The first line of each test case contains field dimensions n, m, and the constant for the shotgun\'s power k (1\xe2\x89\xa4n,m,k\xe2\x89\xa4105,1\xe2\x89\xa4n\xe2\x8b\x85m\xe2\x89\xa4105).
+Each of the next n lines contains m characters \xe2\x80\x94 the description of the next field row, where the character \'.\' means the cell is empty, and the character \'#\' indicates the presence of a target. 
+It is guaranteed that the sum of n\xe2\x8b\x85m over all test cases does not exceed 105.
+For each test case, output a single integer on a separate line, which is equal to the maximum possible number of hit targets with one shot.
+Possible optimal shots for the examples in the statement:" "2200  x1259"
+1921F "Sum of Progression" "brute force, data structures, dp, implementation, math" "You are given an array a of n numbers. There are also q queries of the form s,d,k.
+For each query q, find the sum of elements as+as+d\xe2\x8b\x852+\xe2\x8b\xaf+as+d\xe2\x8b\x85(k\xe2\x88\x921)\xe2\x8b\x85k. In other words, for each query, it is necessary to find the sum of k elements of the array with indices starting from the s-th, taking steps of size d, multiplying it by the serial number of the element in the resulting sequence.
+Each test consists of several testcases. The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of testcases. Next lines contain descriptions of testcases.
+The first line of each testcase contains two numbers n,q (1\xe2\x89\xa4n\xe2\x89\xa4105,1\xe2\x89\xa4q\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of elements in the array a and the number of queries.
+The second line contains n integers a1,...an (\xe2\x88\x92108\xe2\x89\xa4a1,...,an\xe2\x89\xa4108) \xe2\x80\x94 elements of the array a.
+The next q lines each contain three integers s, d, and k (1\xe2\x89\xa4s,d,k\xe2\x89\xa4n, s+d\xe2\x8b\x85(k\xe2\x88\x921)\xe2\x89\xa4n ).
+It is guaranteed that the sum of n over all testcases does not exceed 105, and that the sum of q over all testcases does not exceed 2\xe2\x8b\x85105.
+For each testcase, print q numbers in a separate line \xe2\x80\x94 the desired sums, separated with space." "1900  x3928"
+1921E "Eat the Chip" "brute force, games, greedy, math" "Alice and Bob are playing a game on a checkered board. The board has h rows, numbered from top to bottom, and w columns, numbered from left to right. Both players have a chip each. Initially, Alice\'s chip is located at the cell with coordinates (xa,ya) (row xa, column ya), and Bob\'s chip is located at (xb,yb). It is guaranteed that the initial positions of the chips do not coincide. Players take turns making moves, with Alice starting.
+On her turn, Alice can move her chip one cell down or one cell down-right or down-left (diagonally). Bob, on the other hand, moves his chip one cell up, up-right, or up-left. It is not allowed to make moves that go beyond the board boundaries.
+More formally, if at the beginning of Alice\'s turn she is in the cell with coordinates (xa,ya), then she can move her chip to one of the cells (xa+1,ya), (xa+1,ya\xe2\x88\x921), or (xa+1,ya+1). Bob, on his turn, from the cell (xb,yb) can move to (xb\xe2\x88\x921,yb), (xb\xe2\x88\x921,yb\xe2\x88\x921), or (xb\xe2\x88\x921,yb+1). The new chip coordinates (x\xe2\x80\xb2,y\xe2\x80\xb2) must satisfy the conditions 1\xe2\x89\xa4x\xe2\x80\xb2\xe2\x89\xa4h and 1\xe2\x89\xa4y\xe2\x80\xb2\xe2\x89\xa4w.
+A player immediately wins if they place their chip in a cell occupied by the other player\'s chip. If either player cannot make a move (Alice\xe2\x80\x94if she is in the last row, i.e. xa=h, Bob\xe2\x80\x94if he is in the first row, i.e. xb=1), the game immediately ends in a draw.
+What will be the outcome of the game if both opponents play optimally?
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. This is followed by the description of the test cases.
+Each test case consists of a single line containing six integers h, w, xa, ya, xb, yb (1\xe2\x89\xa4xa,xb\xe2\x89\xa4h\xe2\x89\xa4106, 1\xe2\x89\xa4ya,yb\xe2\x89\xa4w\xe2\x89\xa4109) \xe2\x80\x94 the dimensions of the board and the initial positions of Alice\'s and Bob\'s chips. It is guaranteed that either xa\xe2\x89\xa0xb or ya\xe2\x89\xa0yb.
+It is guaranteed that the sum of h over all test cases does not exceed 106.
+For each test case, output ""Alice"" if Alice wins, ""Bob"" if Bob wins, and ""Draw"" if neither player can secure a victory. You can output each letter in any case (lowercase or uppercase). For example, the strings ""bOb"", ""bob"", ""Bob"", and ""BOB"" will be accepted as Bob\'s victory." "1600  x9892"
+1921D "Very Different Array" "data structures, greedy, sortings, two pointers" "Petya has an array aiai of nn integers. His brother Vasya became envious and decided to make his own array of nn integers.
+To do this, he found mm integers bibi (m\xe2\x89\xa5nm\xe2\x89\xa5n), and now he wants to choose some nn integers of them and arrange them in a certain order to obtain an array cici of length n.
+To avoid being similar to his brother, Vasya wants to make his array as different as possible from Petya\'s array. Specifically, he wants the total difference D=\xe2\x88\x91ni=1|ai\xe2\x88\x92ci| to be as large as possible.
+Help Vasya find the maximum difference D he can obtain.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases. This is followed by a description of the test cases.
+The first line of each test case contains two integers n and m (1\xe2\x89\xa4n\xe2\x89\xa4m\xe2\x89\xa42\xe2\x8b\x85105).
+The second line of each test case contains n integers ai (1\xe2\x89\xa4ai\xe2\x89\xa4109). The third line of each test case contains m integers bi (1\xe2\x89\xa4bi\xe2\x89\xa4109).
+It is guaranteed that in a test, the sum of m over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output a single integer \xe2\x80\x94 the maximum total difference D that can be obtained.
+In the first example, Vasya can, for example, create the array (1,5,7,2). Then the total difference will be D=|6\xe2\x88\x921|+|1\xe2\x88\x925|+|2\xe2\x88\x927|+|4\xe2\x88\x922|=5+4+5+2=16.
+In the second example, all the integers available to Vasya are equal to 1, so he can only create the array (1,1,1), for which the difference D=0.
+In the third example, Vasya can, for example, create the array (5,4,3,2,1). Then the total difference will be D=|1\xe2\x88\x925|+|2\xe2\x88\x924|+|3\xe2\x88\x923|+|4\xe2\x88\x922|+|5\xe2\x88\x921|=4+2+0+2+4=12." "1100  x21791"
+1921C "Sending Messages" "greedy, math" "Stepan is a very busy person. Today he needs to send n messages at moments m1,m2,\xe2\x80\xa6mn (mi<mi+1). Unfortunately, by the moment 0, his phone only has f units of charge left. At the moment 0, the phone is turned on.
+The phone loses a units of charge for each unit of time it is on. Also, at any moment, Stepan can turn off the phone and turn it on later. This action consumes b units of energy each time. Consider turning on and off to be instantaneous, so you can turn it on at moment x and send a message at the same moment, and vice versa, send a message at moment x and turn off the phone at the same moment.
+If at any point the charge level drops to 0 (becomes \xe2\x89\xa40), it is impossible to send a message at that moment.
+Since all messages are very important to Stepan, he wants to know if he can send all the messages without the possibility of charging the phone.
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. This is followed by the descriptions of the test cases.
+The first line of each test case contains four integers n, f, a, and b (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105, 1\xe2\x89\xa4f,a,b\xe2\x89\xa4109) \xe2\x80\x94 the number of messages, the initial phone\'s charge, the charge consumption per unit of time, and the consumption when turned off and on sequentially.
+The second line of each test case contains n integers m1,m2,\xe2\x80\xa6,mn (1\xe2\x89\xa4mi\xe2\x89\xa4109, mi<mi+1) \xe2\x80\x94 the moments at which messages need to be sent.
+It is guaranteed that in a test the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output ""YES"" if Stepan can send all the messages, and ""NO"" otherwise.
+You can output each letter in any case (lowercase or uppercase). For example, the strings ""yEs"", ""yes"", ""Yes"", and ""YES"" will be accepted as a positive answer.
+In the first test case of the example, at moment 0, the phone\'s charge is 3. When sending a message at moment 3 without turning it off, (3\xe2\x88\x920)\xe2\x8b\x851=3 units of charge will be spent. In this case, the charge will drop to 0 and Stepan will not be able to send the message. When turning off and on, the phone\'s charge will decrease by 5, so it will not be possible to send the message in this way.
+In the third test case of the example, at moment 0, the phone\'s charge is 10. The phone loses 1 unit of charge per unit of time, and when turned off and on, it loses 2 units of charge. To send all messages, the following actions can be taken:
+The last (sixth) test set of the example may fail if there is an integer overflow in your solution." "900  x29550"
+1921B "Arranging Cats" "greedy, implementation" "In order to test the hypothesis about the cats, the scientists must arrange the cats in the boxes in a specific way. Of course, they would like to test the hypothesis and publish a sensational article as quickly as possible, because they are too engrossed in the next hypothesis about the phone\'s battery charge.
+Scientists have nn boxes in which cats may or may not sit. Let the current state of the boxes be denoted by the sequence b1,\xe2\x80\xa6,bn: bi=1 if there is a cat in box number i, and bi=0 otherwise. 
+Fortunately, the unlimited production of cats has already been established, so in one day, the scientists can perform one of the following operations:
+It has also been found that some boxes were immediately filled with cats. Therefore, the scientists know the initial position of the cats in the boxes s1,\xe2\x80\xa6,sn and the desired position f1,\xe2\x80\xa6,fn.
+Due to the large amount of paperwork, the scientists do not have time to solve this problem. Help them for the sake of science and indicate the minimum number of days required to test the hypothesis.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. This is followed by descriptions of the test cases.
+Each test case consists of three lines.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the number of boxes.
+The second line of each test case contains a string s of n characters, where the i-th character is \'1\' if there is a cat in the i-th box and \'0\' otherwise.
+The third line of each test case contains a string f of n characters, where the i-th character is \'1\' if there should be a cat in the i-th box and \'0\' otherwise.
+It is guaranteed that in a test the sum of n over all test cases does not exceed 105.
+For each test case, output a single integer on a separate line \xe2\x80\x94 the minimum number of operations required to obtain the desired position from the initial position. It can be shown that a solution always exists.
+In the first test case, you can first move the cat from the first box to the fifth, and then remove the cat from the fourth box.
+In the second test case, there is nothing to do \xe2\x80\x94 the only cat is already sitting in the correct box.
+In the third test case of input data, it takes three days to place a cat in each box." "800  x33942"
+1921A Square "greedy, math" "A square of positive (strictly greater than 0) area is located on the coordinate plane, with sides parallel to the coordinate axes. You are given the coordinates of its corners, in random order. Your task is to find the area of the square.
+Each test consists of several testcases. The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of testcases. The following is a description of the testcases.
+Each testcase contains four lines, each line contains two integers xi,yi (\xe2\x88\x921000\xe2\x89\xa4xi,yi\xe2\x89\xa41000), coordinates of the corners of the square. 
+It is guaranteed that there is a square with sides parallel to the coordinate axes, with positive (strictly greater than 0) area, with corners in given points.
+For each test case, print a single integer, the area of the square." "800  x43702"
+1920F2 "Smooth Sailing (Hard Version)" "binary search, data structures, dsu, geometry, graphs, trees" "The only difference between the two versions of this problem is the constraint on q. You can make hacks only if both versions of the problem are solved.
+Thomas is sailing around an island surrounded by the ocean. The ocean and island can be represented by a grid with n rows and m columns. The rows are numbered from 1 to n from top to bottom, and the columns are numbered from 1 to m from left to right. The position of a cell at row r and column c can be represented as (r,c). Below is an example of a valid grid.
+There are three types of cells: island, ocean and underwater volcano. Cells representing the island are marked with a \'#\', cells representing the ocean are marked with a \'.\', and cells representing an underwater volcano are marked with a \'v\'. It is guaranteed that there is at least one island cell and at least one underwater volcano cell. It is also guaranteed that the set of all island cells forms a single connected component\xe2\x80\xa0 and the set of all ocean cells and underwater volcano cells forms a single connected component. Additionally, it is guaranteed that there are no island cells at the edge of the grid (that is, at row 1, at row n, at column 1, and at column m).
+Define a round trip starting from cell (x,y) as a path Thomas takes which satisfies the following conditions:
+The safety of a round trip is the minimum Manhattan distance\xe2\x80\xa1 from a cell on the round trip to an underwater volcano (note that the presence of island cells does not impact this distance).
+You have q queries. A query can be represented as (x,y) and for every query, you want to find the maximum safety of a round trip starting from (x,y). It is guaranteed that (x,y) is an ocean cell or an underwater volcano cell.
+\xe2\x80\xa0A set of cells forms a single connected component if from any cell of this set it is possible to reach any other cell of this set by moving only through the cells of this set, each time going to a cell with a common side.
+\xe2\x80\xa1Manhattan distance between cells (r1,c1) and (r2,c2) is equal to |r1\xe2\x88\x92r2|+|c1\xe2\x88\x92c2|.
+The first line contains three integers n, m, and q (3\xe2\x89\xa4n,m\xe2\x89\xa4105, 9\xe2\x89\xa4n\xe2\x8b\x85m\xe2\x89\xa43\xe2\x8b\x85105, 1\xe2\x89\xa4q\xe2\x89\xa43\xe2\x8b\x85105) \xe2\x80\x94 the number of rows and columns of the grid and the number of queries. 
+Each of the following n lines contains m characters describing the cells of the grid. The character \'#\' denotes an island cell, \'.\' denotes an ocean cell, and \'v\' denotes an underwater volcano cell.
+It is guaranteed that there is at least one island cell and at least one underwater volcano cell. It is guaranteed that the set of all island cells forms a single connected component and the set of all ocean cells and underwater volcano cells forms a single connected component. Also, it is guaranteed that there are no island cells at the edge of the grid (that is, at the row 1, at the row n, at the column 1, and at the column m).
+The following q lines describe the queries. Each of these lines contains two integers x and y (1\xe2\x89\xa4x\xe2\x89\xa4n, 1\xe2\x89\xa4y\xe2\x89\xa4m) denoting a round trip starting from (x,y).
+It is guaranteed that (x,y) is an ocean cell or an underwater volcano cell.
+For each query, output a single integer \xe2\x80\x94 the maximum safety of a round trip starting from the specified position.
+For the first example, the image below shows an optimal round trip starting from (1,1). The round trip has a safety of 3 as the minimum Manhattan distance from a cell on the round trip to an underwater volcano is 3.
+For the fourth example, remember that it is allowed for Thomas to visit the same cell multiple times in the same round trip. For example, doing so is necessary for the round trip starting from (7,6)." "3000  x536"
+1920F1 "Smooth Sailing (Easy Version)" "binary search, brute force, data structures, dfs and similar, dsu, graphs, shortest paths" "The only difference between the two versions of this problem is the constraint on qq. You can make hacks only if both versions of the problem are solved.
+Thomas is sailing around an island surrounded by the ocean. The ocean and island can be represented by a grid with nn rows and mm columns. The rows are numbered from 11 to nn from top to bottom, and the columns are numbered from 11 to mm from left to right. The position of a cell at row rr and column cc can be represented as (r,c)(r,c). Below is an example of a valid grid.
+There are three types of cells: island, ocean and underwater volcano. Cells representing the island are marked with a \'#\', cells representing the ocean are marked with a \'.\', and cells representing an underwater volcano are marked with a \'v\'. It is guaranteed that there is at least one island cell and at least one underwater volcano cell. It is also guaranteed that the set of all island cells forms a single connected component\xe2\x80\xa0 and the set of all ocean cells and underwater volcano cells forms a single connected component. Additionally, it is guaranteed that there are no island cells at the edge of the grid (that is, at row 1, at row n, at column 1, and at column m).
+Define a round trip starting from cell (x,y) as a path Thomas takes which satisfies the following conditions:
+The safety of a round trip is the minimum Manhattan distance\xe2\x80\xa1 from a cell on the round trip to an underwater volcano (note that the presence of island cells does not impact this distance).
+You have q queries. A query can be represented as (x,y) and for every query, you want to find the maximum safety of a round trip starting from (x,y). It is guaranteed that (x,y) is an ocean cell or an underwater volcano cell.
+\xe2\x80\xa0A set of cells forms a single connected component if from any cell of this set it is possible to reach any other cell of this set by moving only through the cells of this set, each time going to a cell with a common side.
+\xe2\x80\xa1Manhattan distance between cells (r1,c1) and (r2,c2) is equal to |r1\xe2\x88\x92r2|+|c1\xe2\x88\x92c2|.
+The first line contains three integers n, m, and q (3\xe2\x89\xa4n,m\xe2\x89\xa4105, 9\xe2\x89\xa4n\xe2\x8b\x85m\xe2\x89\xa43\xe2\x8b\x85105, 1\xe2\x89\xa4q\xe2\x89\xa45) \xe2\x80\x94 the number of rows and columns of the grid and the number of queries. 
+Each of the following n lines contains m characters describing the cells of the grid. The character \'#\' denotes an island cell, \'.\' denotes an ocean cell, and \'v\' denotes an underwater volcano cell.
+It is guaranteed that there is at least one island cell and at least one underwater volcano cell. It is guaranteed that the set of all island cells forms a single connected component and the set of all ocean cells and underwater volcano cells forms a single connected component. Also, it is guaranteed that there are no island cells at the edge of the grid (that is, at the row 1, at the row n, at the column 1, and at the column m).
+The following q lines describe the queries. Each of these lines contains two integers x and y (1\xe2\x89\xa4x\xe2\x89\xa4n, 1\xe2\x89\xa4y\xe2\x89\xa4m) denoting a round trip starting from (x,y).
+It is guaranteed that (x,y) is an ocean cell or an underwater volcano cell.
+For each query, output a single integer \xe2\x80\x94 the maximum safety of a round trip starting from the specified position.
+For the first example, the image below shows an optimal round trip starting from (1,1). The round trip has a safety of 3 as the minimum Manhattan distance from a cell on the round trip to an underwater volcano is 3.
+For the fourth example, remember that it is allowed for Thomas to visit the same cell multiple times in the same round trip. For example, doing so is necessary for the round trip starting from (7,6)." "2500  x1008"
+1920E "Counting Binary Strings" "combinatorics, dp, math" "Patrick calls a substring\xe2\x80\xa0 of a binary string\xe2\x80\xa1 good if this substring contains exactly one 1. 
+Help Patrick count the number of binary strings s such that s contains exactly n good substrings and has no good substring of length strictly greater than k. Note that substrings are differentiated by their location in the string, so if s= 1010 you should count both occurrences of 10.
+\xe2\x80\xa0 A string a is a substring of a string b if a can be obtained from b by the deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end.
+\xe2\x80\xa1 A binary string is a string that only contains the characters 0 and 1.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa42500) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The only line of each test case contains two integers n and k (1\xe2\x89\xa4n\xe2\x89\xa42500, 1\xe2\x89\xa4k\xe2\x89\xa4n) \xe2\x80\x94 the number of required good substrings and the maximum allowed length of a good substring. 
+It is guaranteed that the sum of n over all test cases does not exceed 2500. 
+For each test case, output a single integer \xe2\x80\x94 the number of binary strings s such that s contains exactly n good substrings and has no good substring of length strictly greater than k. Since this integer can be too large, output it modulo 998244353.
+In the first test case, the only suitable binary string is 1. String 01 is not suitable because it contains a substring 01 with length 2>1.
+In the second test case, suitable binary strings are 011, 110 and 111.
+In the third test case, suitable binary strings are 101, 0110, 0111, 1110, and 1111." "2100  x2745"
+1920D "Array Repetition" "binary search, brute force, dsu, implementation, math" "Jayden has an array a which is initially empty. There are n operations of two types he must perform in the given order.
+Jayden has q queries. For each query, you must tell him the k-th element of array a. The elements of the array are numbered from 1.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa45000) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains two integers n and q (1\xe2\x89\xa4n,q\xe2\x89\xa4105) \xe2\x80\x94 the number of operations and the number of queries.
+The following n lines describe the operations. Each line contains two integers b and x (b\xe2\x88\x88{1,2}), where b denotes the type of operation. If b=1, then x (1\xe2\x89\xa4x\xe2\x89\xa4n) is the integer Jayden appends to the end of the array. If b=2, then x (1\xe2\x89\xa4x\xe2\x89\xa4109) is the number of copies Jayden appends to the end of the array. 
+The next line of each test case contains q integers k1,k2,\xe2\x80\xa6,kq (1\xe2\x89\xa4ki\xe2\x89\xa4min(1018,c)), which denote the queries, where c is the size of the array after finishing all n operations.
+It is guaranteed that the sum of n and the sum of q over all test cases does not exceed 105. 
+For each test case, output q integers \xe2\x80\x94 answers to Jayden\'s queries.
+In the first test case:
+In the fourth test case, after all operations a=[1,2]." "1900  x5658"
+1920C "Partitioning the Array" "brute force, math, number theory" "Allen has an array a1,a2,\xe2\x80\xa6,an. For every positive integer k that is a divisor of n, Allen does the following:
+Help Allen find the number of points he will earn.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the length of the array a.
+The second line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n) \xe2\x80\x94 the elements of the array a.
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105. 
+For each test case, output a single integer \xe2\x80\x94 the number of points Allen will earn.
+In the first test case, k=2 earns a point since Allen can pick m=2 and both subarrays will be equal to [1,0]. k=4 also earns a point, since no matter what m Allen chooses, there will be only one subarray and thus all subarrays are equal.
+In the second test case, Allen earns 1 point for k=3, where his choice for m does not matter." "1600  x13806"
+1920B "Summation Game" "games, greedy, math, sortings" "Alice and Bob are playing a game. They have an array a1,a2,\xe2\x80\xa6,an. The game consists of two steps:
+Alice wants to maximize the sum of elements of the array while Bob wants to minimize it. Find the sum of elements of the array after the game if both players play optimally.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains three integers n, k, and x (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105, 1\xe2\x89\xa4x,k\xe2\x89\xa4n) \xe2\x80\x94 the number of elements in the array, the limit on the number of elements of the array that Alice can remove, and the limit on the number of elements of the array that Bob can multiply \xe2\x88\x921 to.
+The second line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa41000) \xe2\x80\x94 the elements of the array.
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105. 
+For each test case, output a single integer \xe2\x80\x94 the sum of elements of the array after the game if both players play optimally.
+In the first test case, it is optimal for Alice to remove the only element of the array. Then, the sum of elements of the array is 0 after the game is over.
+In the second test case, it is optimal for Alice to not remove any elements. Bob will then multiply 4 by \xe2\x88\x921. So the final sum of elements of the array is 3+1+2\xe2\x88\x924=2.
+In the fifth test case, it is optimal for Alice to remove 9,9. Bob will then multiply 5,5,3 by \xe2\x88\x921. So the final sum of elements of the array is \xe2\x88\x925\xe2\x88\x925\xe2\x88\x923+3+3+2=\xe2\x88\x925." "1100  x21079"
+1920A "Satisfying Constraints" "brute force, greedy, math" "Alex is solving a problem. He has n constraints on what the integer k can be. There are three types of constraints:
+Help Alex find the number of integers k that satisfy all n constraints. It is guaranteed that the answer is finite (there exists at least one constraint of type 1 and at least one constraint of type 2). Also, it is guaranteed that no two constraints are the exact same.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4500) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa4100) \xe2\x80\x94 the number of constraints.
+The following n lines describe the constraints. Each line contains two integers a and x (a\xe2\x88\x88{1,2,3},1\xe2\x89\xa4x\xe2\x89\xa4109). a denotes the type of constraint. If a=1, k must be greater than or equal to x. If a=2, k must be less than or equal to x. If a=3, k must be not equal to x.
+It is guaranteed that there is a finite amount of integers satisfying all n constraints (there exists at least one constraint of type 1 and at least one constraint of type 2). It is also guaranteed that no two constraints are the exact same (in other words, all pairs (a,x) are distinct).
+For each test case, output a single integer \xe2\x80\x94 the number of integers k that satisfy all n constraints.
+In the first test case, k\xe2\x89\xa53 and k\xe2\x89\xa410. Furthermore, k\xe2\x89\xa01 and k\xe2\x89\xa05. The possible integers k that satisfy the constraints are 3,4,6,7,8,9,10. So the answer is 7.
+In the second test case, k\xe2\x89\xa55 and k\xe2\x89\xa44, which is impossible. So the answer is 0." "800  x27966"
+1919H "Tree Diameter" "interactive, trees" "There is a hidden tree with nn vertices. The n\xe2\x88\x921n\xe2\x88\x921 edges of the tree are numbered from 11 to n\xe2\x88\x921n\xe2\x88\x921. You can ask the following queries of two types:
+Find any tree isomorphic\xe2\x80\xa1 to the hidden tree after at most n queries of type 1 and n queries of type 2 in any order.
+\xe2\x80\xa0 The distance between two vertices is the sum of the weights on the unique simple path that connects them. The diameter is the largest of all those distances.
+\xe2\x80\xa1 Two trees, consisting of n vertices each, are called isomorphic if there exists a permutation p containing integers from 1 to n such that edge (u, v) is present in the first tree if and only if the edge (pu, pv) is present in the second tree.
+The first and only line of input contains a single integer n (3\xe2\x89\xa4n\xe2\x89\xa41000) \xe2\x80\x94 the number of vertices in the tree.
+Begin the interaction by reading n.
+You are allowed to make queries in the following way:
+In case your query is invalid. the program will terminate immediately and you will receive Wrong answer verdict.
+To give the final answer, print ""!"" on a single line, followed by n\xe2\x88\x921 lines where line i contains ""uivi"" (1\xe2\x89\xa4ui,vi\xe2\x89\xa4n) which represents that for each i from 1 to n\xe2\x88\x921, there is an edge between ui and vi.
+After printing a query do not forget to output end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:
+Hacks
+The first line contains a single integer n (3\xe2\x89\xa4n\xe2\x89\xa41000) \xe2\x80\x94 the number of vertices in the tree.
+The next n\xe2\x88\x921 lines contain two integers each ui,vi (1\xe2\x89\xa4ui,vi\xe2\x89\xa4n) \xe2\x80\x94 the edges of the tree.
+
+The hidden tree in the example is shown above. The number on the vertices represents the vertex number while the number on the edges represents the edge number.
+
+In the first query, all the edges are set to weight 1, so the diameter has length 3 as shown in the diagram.
+In the second query, there is 1 edge between edges 1 and 3.
+
+In the third query, the diameter is 9 by taking edges 1, 2 and 3.
+In the fourth query, there are no edges between edges 4 and 2.
+
+The answer given in the example is shown in the above diagram. Since it is isomorphic to the hidden tree, it is accepted as a correct answer. Note that the edges can be printed in any order." "2000  x144"
+1919G "Tree LGM" "constructive algorithms, divide and conquer, games, trees" "In TreeWorld, there is a popular two-player game played on a tree with nn vertices labelled from 1 to n. In this game, the tournament leaders first choose a vertex to be the root of the tree and choose another vertex (possibly the same vertex as the root) to place a coin on. Then, each player will take turns moving the coin to any child\xe2\x80\xa0 of the vertex that the coin is currently on. The first player who is unable to make a move loses.
+Alice wants to be a tree LGM, so she spends a lot of time studying the game. She wrote down an n by n matrix s, where si,j=1 if the first player can win with the root of the tree chosen to be vertex i, and the coin was initially placed on vertex j. Otherwise, si,j=0. Alice is a perfectionist, so she assumes that both players play perfectly in the game.
+However, she accidentally knocked her head on the way to the tournament and forgot what the tree looked like. Determine whether there exists a tree that satisfies the winning and losing states represented by matrix s, and if it exists, construct a valid tree.
+\xe2\x80\xa0 A vertex c is a child of vertex u if there is an edge between c and u, and c does not lie on the unique simple path from the root to vertex u.
+The first line contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa45000) \xe2\x80\x94 the number of vertices in the tree.
+Each of the next n lines contains a string with n characters, the j-th character of the i-th line representing si,j (si,j\xe2\x88\x88{0,1}) \xe2\x80\x94 the winning and losing states of the tree.
+If there is no tree satisfying the winning and losing states represented by matrix s, print a single line containing ""NO"".
+Otherwise, if there exists a tree satisfying matrix s, print ""YES"" on the first line, followed by n\xe2\x88\x921 lines each containing two integers u and v (1\xe2\x89\xa4u,v\xe2\x89\xa4n) representing that the tree has an edge between vertices u and v.
+You can output the answer in any case (upper or lower). For example, the strings ""yEs"", ""yes"", ""Yes"", and ""YES"" will be recognized as positive responses.
+If there are multiple trees satisfying the winning and losing states represented by matrix s, print any of them.
+In the first test case, the line graph 1\xe2\x88\x924\xe2\x88\x922\xe2\x88\x923 satisfies the winning and losing states represented by matrix s. For example, s3,3=1 as the first player can move the coin from 3\xe2\x86\x922, then the second player moves the coin from 2\xe2\x86\x924, and finally, the first player moves the coin from 4\xe2\x86\x921. At this point, 1 has no children, so the second player is unable to make a move and loses. On the other hand, s1,3=0 as if 1 is the root, then 3 has no children so the first player is unable to make the first move and loses.
+In the second test case, it is possible to prove that no tree satisfies the winning and losing states represented by matrix s." "3500  x183"
+1919F2 "Wine Factory (Hard Version)" "data structures, dp, flows, greedy, matrices" "This is the hard version of the problem. The only difference between the two versions is the constraint on cici and z. You can make hacks only if both versions of the problem are solved.
+There are three arrays a, b and c. a and b have length n and c has length n\xe2\x88\x921. Let W(a,b,c) denote the liters of wine created from the following process.
+Create n water towers. The i-th water tower initially has ai liters of water and has a wizard with power bi in front of it. Furthermore, for each 1\xe2\x89\xa4i\xe2\x89\xa4n\xe2\x88\x921, there is a valve connecting water tower i to i+1 with capacity ci.
+For each i from 1 to n in this order, the following happens: 
+There are q updates. In each update, you will be given integers p, x, y and z and you will update ap:=x, bp:=y and cp:=z. After each update, find the value of W(a,b,c). Note that previous updates to arrays a, b and c persist throughout future updates.
+The first line contains two integers n and q (2\xe2\x89\xa4n\xe2\x89\xa45\xe2\x8b\x85105, 1\xe2\x89\xa4q\xe2\x89\xa45\xe2\x8b\x85105) \xe2\x80\x94 the number of water towers and the number of updates.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (0\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the number of liters of water in water tower i.
+The third line contains n integers b1,b2,\xe2\x80\xa6,bn (0\xe2\x89\xa4bi\xe2\x89\xa4109) \xe2\x80\x94 the power of the wizard in front of water tower i.
+The fourth line contains n\xe2\x88\x921 integers c1,c2,\xe2\x80\xa6,cn\xe2\x88\x921 (0\xe2\x89\xa4ci\xe2\x89\xa41018) \xe2\x80\x94 the capacity of the pipe connecting water tower i to i+1.
+Each of the next q lines contains four integers p, x, y and z (1\xe2\x89\xa4p\xe2\x89\xa4n, 0\xe2\x89\xa4x,y\xe2\x89\xa4109, 0\xe2\x89\xa4z\xe2\x89\xa41018) \xe2\x80\x94 the updates done to arrays a, b and c.
+Note that cn does not exist, so the value of z does not matter when p=n.
+Print q lines, each line containing a single integer representing W(a,b,c) after each update.
+The first update does not make any modifications to the arrays. 
+Hence, W(a,b,c)=1+4+2+4=11 after the first update.
+The second update modifies the arrays to a=[3,5,3,3], b=[1,1,2,8], and c=[5,1,1].
+Hence, W(a,b,c)=1+1+2+4=8 after the second update.
+The third update modifies the arrays to a=[3,5,0,3], b=[1,1,0,8], and c=[5,1,0].
+Hence, W(a,b,c)=1+1+0+3=5 after the third update." "2800  x868"
+1919F1 "Wine Factory (Easy Version)" "data structures, greedy" "This is the easy version of the problem. The only difference between the two versions is the constraint on cici and z. You can make hacks only if both versions of the problem are solved.
+There are three arrays a, b and c. a and b have length n and c has length n\xe2\x88\x921. Let W(a,b,c) denote the liters of wine created from the following process.
+Create n water towers. The i-th water tower initially has ai liters of water and has a wizard with power bi in front of it. Furthermore, for each 1\xe2\x89\xa4i\xe2\x89\xa4n\xe2\x88\x921, there is a valve connecting water tower i to i+1 with capacity ci.
+For each i from 1 to n in this order, the following happens: 
+There are q updates. In each update, you will be given integers p, x, y and z and you will update ap:=x, bp:=y and cp:=z. After each update, find the value of W(a,b,c). Note that previous updates to arrays a, b and c persist throughout future updates.
+The first line contains two integers n and q (2\xe2\x89\xa4n\xe2\x89\xa45\xe2\x8b\x85105, 1\xe2\x89\xa4q\xe2\x89\xa45\xe2\x8b\x85105) \xe2\x80\x94 the number of water towers and the number of updates.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (0\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the number of liters of water in water tower i.
+The third line contains n integers b1,b2,\xe2\x80\xa6,bn (0\xe2\x89\xa4bi\xe2\x89\xa4109) \xe2\x80\x94 the power of the wizard in front of water tower i.
+The fourth line contains n\xe2\x88\x921 integers c1,c2,\xe2\x80\xa6,cn\xe2\x88\x921 (ci=1018) \xe2\x80\x94 the capacity of the pipe connecting water tower i to i+1.
+Each of the next q lines contains four integers p, x, y and z (1\xe2\x89\xa4p\xe2\x89\xa4n, 0\xe2\x89\xa4x,y\xe2\x89\xa4109, z=1018) \xe2\x80\x94 the updates done to arrays a, b and c.
+Note that cn does not exist, so the value of z does not matter when p=n.
+Print q lines, each line containing a single integer representing W(a,b,c) after each update.
+The first update does not make any modifications to the arrays. 
+Hence, W(a,b,c)=1+4+2+5=12 after the first update.
+The second update modifies the arrays to a=[3,5,3,3], b=[1,1,2,8], and c=[1018,1018,1018].
+Hence, W(a,b,c)=1+1+2+8=12 after the second update.
+The third update modifies the arrays to a=[3,5,0,3], b=[1,1,0,8], and c=[1018,1018,1018].
+Hence, W(a,b,c)=1+1+0+8=10 after the third update." "2300  x2206"
+1919E "Counting Prefixes" "combinatorics, constructive algorithms, dp, implementation, math" "There is a hidden array a of size n consisting of only 1 and \xe2\x88\x921. Let p be the prefix sums of array a. More formally, p is an array of length n defined as pi=a1+a2+\xe2\x80\xa6+ai. Afterwards, array p is sorted in non-decreasing order. For example, if a=[1,\xe2\x88\x921,\xe2\x88\x921,1,1], then p=[1,0,\xe2\x88\x921,0,1] before sorting and p=[\xe2\x88\x921,0,0,1,1] after sorting.
+You are given the prefix sum array p after sorting, but you do not know what array a is. Your task is to count the number of initial arrays a such that the above process results in the given sorted prefix sum array p. As this number can be large, you are only required to find it modulo 998244353.
+Each test contains multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa45000) \xe2\x80\x94 the size of the hidden array a.
+The second line of each test case contains n integers p1,p2,\xe2\x80\xa6,pn (|pi|\xe2\x89\xa4n) \xe2\x80\x94 the n prefix sums of a sorted in non-decreasing order.
+It is guaranteed that p1\xe2\x89\xa4p2\xe2\x89\xa4\xe2\x80\xa6\xe2\x89\xa4pn.
+It is guaranteed that the sum of n over all test cases does not exceed 5000.
+For each test case, output the answer modulo 998244353.
+In the first two test cases, the only possible arrays a for n=1 are a=[1] and a=[\xe2\x88\x921]. Their respective sorted prefix sum arrays p are p=[1] and p=[\xe2\x88\x921]. Hence, there is no array a that can result in the sorted prefix sum array p=[0] and there is exactly 1 array a that can result in the sorted prefix sum array p=[1].
+In the third test case, it can be proven that there is no array a that could result in the sorted prefix sum array p=[\xe2\x88\x921,1,2].
+In the fourth test case, the 3 possible arrays a that could result in the sorted prefix sum array p=[\xe2\x88\x921,0,0,1,1] are:
+For the fifth test case, the only possible array a that could result in the sorted prefix sum array p=[\xe2\x88\x924,\xe2\x88\x923,\xe2\x88\x923,\xe2\x88\x922,\xe2\x88\x921] is a=[\xe2\x88\x921,\xe2\x88\x921,\xe2\x88\x921,\xe2\x88\x921,1]." "2600  x860"
+1919D "01 Tree" "constructive algorithms, data structures, dsu, greedy, sortings, trees" "There is an edge-weighted complete binary tree with n leaves. A complete binary tree is defined as a tree where every non-leaf vertex has exactly 2 children. For each non-leaf vertex, we label one of its children as the left child and the other as the right child.
+The binary tree has a very strange property. For every non-leaf vertex, one of the edges to its children has weight 0 while the other edge has weight 1. Note that the edge with weight 0 can be connected to either its left or right child.
+You forgot what the tree looks like, but luckily, you still remember some information about the leaves in the form of an array a of size n. For each i from 1 to n, ai represents the distance\xe2\x80\xa0 from the root to the i-th leaf in dfs order\xe2\x80\xa1. Determine whether there exists a complete binary tree which satisfies array a. Note that you do not need to reconstruct the tree.
+\xe2\x80\xa0 The distance from vertex u to vertex v is defined as the sum of weights of the edges on the path from vertex u to vertex v.
+\xe2\x80\xa1 The dfs order of the leaves is found by calling the following dfs function on the root of the binary tree. 
+Each test contains multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the size of array a.
+The second line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (0\xe2\x89\xa4ai\xe2\x89\xa4n\xe2\x88\x921) \xe2\x80\x94 the distance from the root to the i-th leaf.
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, print ""YES"" if there exists a complete binary tree which satisfies array a and ""NO"" otherwise.
+You may print each letter in any case (for example, ""YES"", ""Yes"", ""yes"", ""yEs"" will all be recognized as a positive answer).
+In the first test case, the following tree satisfies the array.
+
+In the second test case, it can be proven that there is no complete binary tree that satisfies the array." "2100  x3917"
+1919C "Grouping Increases" "data structures, dp, greedy" "You are given an array aa of size n. You will do the following process to calculate your penalty: 
+If you perform the above process optimally, find the minimum possible penalty you will receive.
+\xe2\x80\xa0 A sequence x is a subsequence of a sequence y if x can be obtained from y by the deletion of several (possibly, zero or all) elements.
+\xe2\x80\xa1 Some valid ways to split array a=[3,1,4,1,5] into (s,t) are ([3,4,1,5],[1]), ([1,1],[3,4,5]) and ([],[3,1,4,1,5]) while some invalid ways to split a are ([3,4,5],[1]), ([3,1,4,1],[1,5]) and ([1,3,4],[5,1]).
+Each test contains multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the size of the array a.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n) \xe2\x80\x94 the elements of the array a.
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output a single integer representing the minimum possible penalty you will receive.
+In the first test case, a possible way to split a is s=[2,4,5] and t=[1,3]. The penalty is p(s)+p(t)=2+1=3.
+In the second test case, a possible way to split a is s=[8,3,1] and t=[2,1,7,4,3]. The penalty is p(s)+p(t)=0+1=1.
+In the third test case, a possible way to split a is s=[] and t=[3,3,3,3,3]. The penalty is p(s)+p(t)=0+0=0." "1400  x19341"
+1919B "Plus-Minus Split" greedy "You are given a string s of length n consisting of characters ""+"" and ""-"". s represents an array a of length n defined by ai=1 if si= ""+"" and ai=\xe2\x88\x921 if si= ""-"".
+You will do the following process to calculate your penalty: 
+If you perform the above process optimally, find the minimum possible penalty you will receive.
+\xe2\x80\xa0 Some valid ways to split a=[3,1,4,1,5] into (b1,b2,\xe2\x80\xa6,bk) are ([3],[1],[4],[1],[5]), ([3,1],[4,1,5]) and ([3,1,4,1,5]) while some invalid ways to split a are ([3,1],[1,5]), ([3],[],[1,4],[1,5]) and ([3,4],[5,1,1]).
+Each test contains multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa45000) \xe2\x80\x94 the length of string s.
+The second line of each test case contains string s (si\xe2\x88\x88{+,\xe2\x88\x92}, |s|=n).
+Note that there are no constraints on the sum of n over all test cases.
+For each test case, output a single integer representing the minimum possible penalty you will receive.
+In the first test case, we have a=[1]. We can split array a into ([1]). Then, the sum of penalties of the subarrays is p([1])=1.
+In the second test case, we have a=[\xe2\x88\x921,\xe2\x88\x921,\xe2\x88\x921,\xe2\x88\x921,\xe2\x88\x921]. We can split array a into ([\xe2\x88\x921],[\xe2\x88\x921],[\xe2\x88\x921],[\xe2\x88\x921],[\xe2\x88\x921]). Then, the sum of penalties of the subarrays is p([\xe2\x88\x921])+p([\xe2\x88\x921])+p([\xe2\x88\x921])+p([\xe2\x88\x921])+p([\xe2\x88\x921])=1+1+1+1+1=5.
+In the third test case, we have a=[1,\xe2\x88\x921,1,\xe2\x88\x921,1,\xe2\x88\x921]. We can split array a into ([1,\xe2\x88\x921,1,\xe2\x88\x921],[1,\xe2\x88\x921]). Then, the sum of penalties of the subarrays is p([1,\xe2\x88\x921,1,\xe2\x88\x921])+p([1,\xe2\x88\x921])=0+0=0." "800  x29835"
+1919A "Wallet Exchange" "games, math" "Alice and Bob are bored, so they decide to play a game with their wallets. Alice has aa coins in her wallet, while Bob has b coins in his wallet.
+Both players take turns playing, with Alice making the first move. In each turn, the player will perform the following steps in order:
+The player who cannot make a valid move on their turn loses. If both Alice and Bob play optimally, determine who will win the game.
+Each test contains multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first and only line of each test case contains two integers a and b (1\xe2\x89\xa4a,b\xe2\x89\xa4109) \xe2\x80\x94 the number of coins in Alice\'s and Bob\'s wallets, respectively.
+For each test case, output ""Alice"" if Alice will win the game, and ""Bob"" if Bob will win the game.
+In the first test case, an example of the game is shown below:
+In the second test case, an example of the game is shown below:" "800  x33515"
+1918G "Permutation of Given" "constructive algorithms, math" "You were given only one number, nn. It didn\'t seem interesting to you, so you wondered if it\'s possible to come up with an array of length n consisting of non-zero integers, such that if each element of the array is replaced by the sum of its neighbors (the elements on the ends are replaced by their only neighbors), you obtain a permutation of the numbers in the original array.
+Each test case contains only one number, n (2\xe2\x89\xa4n\xe2\x89\xa4106).
+If a solution exists, output ""YES"" (without quotes), followed by an array a (\xe2\x88\x92109\xe2\x89\xa4ai\xe2\x89\xa4109,ai\xe2\x89\xa00) that satisfies the condition of the problem. If there are multiple possible answers, output any of them.
+If there is no suitable array, output ""NO"" (without quotes).
+The words ""YES"" and ""NO"" can be output in any case, for example, ""YES"", ""Yes"", ""yEs"", and so on.
+In the first test, the array [1,2,\xe2\x88\x922,\xe2\x88\x921] is suitable, because if each element is replaced by the sum of its neighbors, the resulting array is [2,\xe2\x88\x921,1,\xe2\x88\x922], which is a permutation of the original array.
+In the second test, it can be shown that there is no solution." "2700  x474"
+1918F "Caterpillar on a Tree" "dfs and similar, graphs, greedy, implementation, sortings, trees" "The caterpillar decided to visit every node of the tree. Initially, it is sitting at the root.
+The tree is represented as a rooted tree with the root at the node 1. Each crawl to a neighboring node takes 1 minute for the caterpillar. 
+And there is a trampoline under the tree. If the caterpillar detaches from the tree and falls onto the trampoline, it will end up at the root of the tree in 0 seconds. But the trampoline is old and can withstand no more than k caterpillar\'s falls.
+What is the minimum time the caterpillar can take to visit all the nodes of the tree?
+More formally, we need to find the minimum time required to visit all the nodes of the tree, if the caterpillar starts at the root (node 1) and moves using two methods.
+The second method (teleportation) can be used at most k times. The caterpillar can finish the journey at any node.
+The first line of the input contains two integers: n (2\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of nodes in the tree, and k (0\xe2\x89\xa4k\xe2\x89\xa4109) \xe2\x80\x94 the maximum number of teleports to the root.
+The second line contains n\xe2\x88\x921 integers p2, p3, ..., pn (1\xe2\x89\xa4pi\xe2\x89\xa4n) \xe2\x80\x94 the ancestors in the tree for nodes 2,3,\xe2\x80\xa6,n; node 1 is the root.
+Print a single number in a single line \xe2\x80\x94 the minimum number of minutes required to visit all the nodes of the tree.
+The figure shows one of the ways to traverse the tree from the first test in 9 minutes. " "2500  x891"
+1918E "ace5 and Task Order" "constructive algorithms, divide and conquer, implementation, interactive, probabilities, sortings" "This is an interactive problem!
+In the new round, there were nn tasks with difficulties from 11 to nn. The coordinator, who decided to have the first round with tasks in unsorted order of difficulty, rearranged the tasks, resulting in a permutation of difficulties from 11 to nn. After that, the coordinator challenged ace5 to guess the permutation in the following way.
+Initially, the coordinator chooses a number xx from 11 to nn.
+ace5 can make queries of the form: ? i? i. The answer will be: 
+The task for ace5 is to guess the permutation in no more than 40n queries. Since ace5 is too busy writing the announcement, he has entrusted this task to you.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases.
+The interaction between your program and the jury\'s program begins with reading a positive integer n (1\xe2\x89\xa4n\xe2\x89\xa42000) \xe2\x80\x94 the length of the hidden permutation.
+To make a query, output a line in the format ""? i"", where 1\xe2\x89\xa4i\xe2\x89\xa4n.
+As an answer, you will receive: 
+You can make no more than 40n queries. To output the answer, you need to print ""! a_1 a_2 ... a_n"", where 1\xe2\x89\xa4ai\xe2\x89\xa4n, and all of them are distinct. Outputting the answer does not count as a query.
+If your program makes more than 40n queries for one test case, or makes an invalid query, then the response to the query will be -1. After receiving such a response, your program should immediately terminate to receive the verdict Wrong Answer. Otherwise, it may receive any other verdict.
+After outputting a query, do not forget to print a newline and flush the output buffer. Otherwise, you will receive the verdict Presentation Error. To flush the buffer, use:
+It is guaranteed that the sum of n over all test cases does not exceed 2000. 
+The interactor in this problem is not adaptive.
+Hacks:
+To make a hack, use the following format:
+The first line contains a single integer t \xe2\x80\x94 the number of test cases.
+The description of each test case should consist of two lines. The first line contains the numbers n and x (1\xe2\x89\xa4x\xe2\x89\xa4n\xe2\x89\xa42000) \xe2\x80\x94 the length of the hidden permutation and the initial value of the number x. The second line contains n distinct numbers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n) \xe2\x80\x94 the permutation that the jury should choose in this test case.
+Sum of n over all test cases should not exceed 2000.
+In the first test, the hidden permutation is a = [2,4,1,5,3], and the initial value of x is 3.
+In the second test, the hidden permutation is a = [2,1], and the initial value of x is 1." "2200  x1749"
+1918D "Blocking Elements" "binary search, data structures, dp, implementation, two pointers" "You are given an array of numbers a1,a2,\xe2\x80\xa6,an. Your task is to block some elements of the array in order to minimize its cost. Suppose you block the elements with indices 1\xe2\x89\xa4b1<b2<\xe2\x80\xa6<bm\xe2\x89\xa4n. Then the cost of the array is calculated as the maximum of: 
+For example, if n=6, the original array is [1,4,5,3,3,2], and you block the elements at positions 2 and 5, then the cost of the array will be the maximum of the sum of the blocked elements (4+3=7) and the sums of the subarrays (1, 5+3=8, 2), which is max(7,1,8,2)=8. 
+You need to output the minimum cost of the array after blocking.
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa430000) \xe2\x80\x94 the number of queries.
+Each test case consists of two lines. The first line contains an integer n (1\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the length of the array a. The second line contains n elements a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the array a.
+It is guaranteed that the sum of n over all test cases does not exceed 105.
+For each test case, output a single number \xe2\x80\x94 the minimum cost of blocking the array.
+The first test case matches with the array from the statement. To obtain a cost of 7, you need to block the elements at positions 2 and 4. In this case, the cost of the array is calculated as the maximum of:
+So the cost is max(7,5)=7. 
+In the second test case, you can block the elements at positions 1 and 4.
+In the third test case, to obtain the answer 11, you can block the elements at positions 2 and 5. There are other ways to get this answer, for example, blocking positions 4 and 6." "1900  x4849"
+1918C XOR-distance "bitmasks, greedy, implementation, math" "You are given integers a, b, r. Find the smallest value of |(a\xe2\x8a\x95x)\xe2\x88\x92(b\xe2\x8a\x95x)| among all 0\xe2\x89\xa4x\xe2\x89\xa4r.
+\xe2\x8a\x95 is the operation of bitwise XOR, and |y| is absolute value of y.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case contains integers a, b, r (0\xe2\x89\xa4a,b,r\xe2\x89\xa41018).
+For each test case, output a single number \xe2\x80\x94 the smallest possible value.
+In the first test, when r=0, then x is definitely equal to 0, so the answer is |4\xe2\x8a\x950\xe2\x88\x926\xe2\x8a\x950|=|4\xe2\x88\x926|=2.
+In the second test:
+Therefore, the answer is 1.
+In the third test, the minimum is achieved when x=1." "1400  x14180"
+1918B "Minimize Inversions" "constructive algorithms, data structures, greedy, implementation, sortings" "You are given two permutations aa and b of length n. A permutation is an array of n elements from 1 to n where all elements are distinct. For example, an array [2,1,3] is a permutation, but [0,1] and [1,3,1] aren\'t.
+You can (as many times as you want) choose two indices i and j, then swap ai with aj and bi with bj simultaneously. 
+You hate inversions, so you want to minimize the total number of inversions in both permutations.
+An inversion in a permutation p is a pair of indices (i,j) such that i<j and pi>pj. For example, if p=[3,1,4,2,5] then there are 3 inversions in it (the pairs of indices are (1,2), (1,4) and (3,4)).
+The first line contains an integer t (1\xe2\x89\xa4t\xe2\x89\xa420000) \xe2\x80\x94 the number of test cases.
+Each test case consists of three lines. The first line contains an integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the length of the permutations a and b. The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n) \xe2\x80\x94 permutation a. The third line contains b in a similar format. 
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output two permutations a\xe2\x80\xb2 and b\xe2\x80\xb2 (in the same format as in the input) \xe2\x80\x94 the permutations after all operations. The total number of inversions in a\xe2\x80\xb2 and b\xe2\x80\xb2 should be the minimum possible among all pairs of permutations that can be obtained using operations from the statement.
+If there are multiple solutions, print any of them.
+In the first test case, the minimum possible number of inversions is 10.
+In the second test case, we can sort both permutations at the same time. For this, the following operations can be done:
+In the third test case, the minimum possible number of inversions is 7." "900  x24002"
+1918A "Brick Wall" "constructive algorithms, greedy, implementation, math" "A brick is a strip of size 1\xc3\x97k, placed horizontally or vertically, where k can be an arbitrary number that is at least 2 (k\xe2\x89\xa52).
+A brick wall of size n\xc3\x97m is such a way to place several bricks inside a rectangle n\xc3\x97m, that all bricks lie either horizontally or vertically in the cells, do not cross the border of the rectangle, and that each cell of the n\xc3\x97m rectangle belongs to exactly one brick. Here n is the height of the rectangle n\xc3\x97m and m is the width. Note that there can be bricks with different values of k in the same brick wall.
+The wall stability is the difference between the number of horizontal bricks and the number of vertical bricks. Note that if you used 0 horizontal bricks and 2 vertical ones, then the stability will be \xe2\x88\x922, not 2.
+What is the maximal possible stability of a wall of size n\xc3\x97m?
+It is guaranteed that under restrictions in the statement at least one n\xc3\x97m wall exists.
+The first line of the input contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa410000), the number of test cases. 
+The only line of each test case contains two integers n and m (2\xe2\x89\xa4n,m\xe2\x89\xa4104).
+For each test case, print one integer, the maximum stability of a wall of size n\xc3\x97m.
+In the 1st test case, the maximum stability of 2 is obtained by placing two horizontal bricks 1\xc3\x972 one on top of the other.
+In the 2nd test case, one can get the maximum stability of 28 by placing 4 horizontal bricks 1\xc3\x972 in each of the 7 rows." "800  x30368"
+1917F "Construct Tree" "bitmasks, constructive algorithms, dp, trees" "You are given an array of integers l1,l2,\xe2\x80\xa6,ln and an integer d. Is it possible to construct a tree satisfying the following three conditions?
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4250) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains two integers n, d (2\xe2\x89\xa4n\xe2\x89\xa42000,1\xe2\x89\xa4d\xe2\x89\xa42000).
+The second line of each test case contains n integers l1,l2,\xe2\x80\xa6,ln (1\xe2\x89\xa4li\xe2\x89\xa4d).
+It is guaranteed that the sum of n over all test cases does not exceed 2000.
+For each test case, output Yes if it is possible to construct a tree that satisfies all the conditions, and No otherwise.
+You can print the letters in any case (upper or lower).
+Below, you are given the illustrations of trees for the first and third test cases. One of the diameters is highlighted by coloring its edges in red." "2500  x978"
+1917E "Construct Matrix" "constructive algorithms, math" "You are given an even integer nn and an integer kk. Your task is to construct a matrix of size n\xc3\x97nn\xc3\x97n consisting of numbers 00 and 11 in such a way that the following conditions are true, or report that it is impossible:
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4130) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+Each test case is described by a single line, which contains two integers n and k (2\xe2\x89\xa4n\xe2\x89\xa41000, n is even, 0\xe2\x89\xa4k\xe2\x89\xa4n2).
+It is guaranteed that the sum of n over all test cases does not exceed 2000.
+For each test case, output Yes if it\'s possible to construct a matrix that satisfies all of the problem\'s conditions, and No otherwise.
+If it is possible to construct a matrix, the i-th of the next n lines should contain n integers representing the elements in the i-th row of the matrix.
+In the first example, all conditions are satisfied: 
+In the third example, it can be shown that it\'s impossible to find a matrix satisfying all the problem\'s conditions." "2500  x1406"
+1917D "Yet Another Inversions Problem" "combinatorics, data structures, dp, implementation, math, number theory" "You are given a permutation p0,p1,\xe2\x80\xa6,pn\xe2\x88\x921p0,p1,\xe2\x80\xa6,pn\xe2\x88\x921 of odd integers from 11 to 2n\xe2\x88\x9212n\xe2\x88\x921 and a permutation q0,q1,\xe2\x80\xa6,qk\xe2\x88\x921 of integers from 0 to k\xe2\x88\x921.
+An array a0,a1,\xe2\x80\xa6,ank\xe2\x88\x921 of length nk is defined as follows:
+For example, if p=[3,5,1] and q=[0,1], then a=[3,6,5,10,1,2].
+Note that all arrays in the statement are zero-indexed. Note that each element of the array a is uniquely determined.
+Find the number of inversions in the array a. Since this number can be very large, you should find only its remainder modulo 998244353.
+An inversion in array a is a pair (i,j) (0\xe2\x89\xa4i<j<nk) such that ai>aj.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains two integers n and k (1\xe2\x89\xa4n,k\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the lengths of arrays p and q.
+The second line of each test case contains n distinct integers p0,p1,\xe2\x80\xa6,pn\xe2\x88\x921 (1\xe2\x89\xa4pi\xe2\x89\xa42n\xe2\x88\x921, pi is odd) \xe2\x80\x94 the array p.
+The third line of each test case contains k distinct integers q0,q1,\xe2\x80\xa6,qk\xe2\x88\x921 (0\xe2\x89\xa4qi<k) \xe2\x80\x94 the array q.
+It is guaranteed that the sum of n over all test cases doesn\'t exceed 2\xe2\x8b\x85105 and the sum of k over all test cases doesn\'t exceed 2\xe2\x8b\x85105.
+For each test case, output one integer: the number of inversions in array a modulo 998244353.
+In the first test case, array a is equal to [3,6,5,10,1,2]. There are 9 inversions in it: (0,4), (0,5), (1,2), (1,4), (1,5), (2,4), (2,5), (3,4), (3,5). Note that these are pairs (i,j) such that i<j and ai>aj.
+In the second test case, array a is equal to [8,4,1,2,24,12,3,6,40,20,5,10]. There are 25 inversions in it.
+In the third test case, array a is equal to [1,2,4,8,16]. There are no inversions in it." "2300  x1808"
+1917C "Watering an Array" "brute force, greedy, implementation, math" "You have an array of integers a1,a2,\xe2\x80\xa6,ana1,a2,\xe2\x80\xa6,an of length n. On the i-th of the next d days you are going to do exactly one of the following two actions:
+Your score is equal to 0 in the beginning. Note that on each day you should perform exactly one of the actions above: you cannot skip a day or perform both actions on the same day.
+What is the maximum score you can achieve at the end?
+Since d can be quite large, the sequence b is given to you in the compressed format: 
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4103) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains three integers n, k and d (1\xe2\x89\xa4n\xe2\x89\xa42000, 1\xe2\x89\xa4k\xe2\x89\xa4105, k\xe2\x89\xa4d\xe2\x89\xa4109) \xe2\x80\x94 the length of the array a, the length of the sequence v and the number of days you are going to perform operations on.
+The second line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (0\xe2\x89\xa4ai\xe2\x89\xa4n) \xe2\x80\x94 the array a.
+The third line of each test case contains k integers v1,v2,\xe2\x80\xa6,vk (1\xe2\x89\xa4vi\xe2\x89\xa4n) \xe2\x80\x94 the sequence v.
+It is guaranteed that the sum of n over all test cases doesn\'t exceed 2000 and the sum of k over all test cases doesn\'t exceed 105.
+For each test case, output one integer: the maximum score you can achieve at the end of the d-th day.
+In the first test case, the sequence b is equal to [1,3,2,3,1,3,2,3,\xe2\x80\xa6] and one of the optimal solutions for this case is as follows:
+It can be shown that it is impossible to score more than 4, so the answer is 4.
+In the second test case, the sequence b is equal to [6,6,6,6,\xe2\x80\xa6]. One of the ways to score 3 is to perform operations of the first type on the 1-st and the 3-rd days and to perform an operation of the second type on the 2-nd day." "1600  x10588"
+1917B "Erase First or Second Letter" "brute force, combinatorics, data structures, dp, strings" "You are given a string s of length n. Let\'s define two operations you can apply on the string:
+Your task is to find the number of distinct non-empty strings that can be generated by applying the given operations on the initial string any number of times (possibly zero), in any order.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains n (1\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the length of the string.
+The second line of each test case contains the string s. It is guaranteed that the string only contains lowercase letters of the English alphabet.
+It is guaranteed that the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output a single integer: the number of distinct non-empty strings you can get.
+In the first test case, we can get the following strings: a, aa, aaa, aaaa, aaaaa.
+In the third test case, for example, the word ba can be reached in the following way:" "1100  x22770"
+1917A "Least Product" "constructive algorithms, math" "You are given an array of integers a1,a2,\xe2\x80\xa6,an. You can perform the following operation any number of times (possibly zero):
+Let r be the minimum possible product of all the ai after performing the operation any number of times.
+Find the minimum number of operations required to make the product equal to r. Also, print one such shortest sequence of operations. If there are multiple answers, you can print any of them.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4500) - the number of test cases. This is followed by their description.
+The first line of each test case contains the a single integer n (1\xe2\x89\xa4n\xe2\x89\xa4100) \xe2\x80\x94 the length of the array.
+The second line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (\xe2\x88\x92109\xe2\x89\xa4ai\xe2\x89\xa4109).
+For each test case: 
+In the first test case, we can change the value of the first integer into 0 and the product will become 0, which is the minimum possible.
+In the second test case, initially, the product of integers is equal to 2\xe2\x8b\x858\xe2\x8b\x85(\xe2\x88\x921)\xe2\x8b\x853=\xe2\x88\x9248 which is the minimum possible, so we should do nothing in this case." "800  x25619"
+1916H2 "Matrix Rank (Hard Version)" "combinatorics, dp, math, matrices, string suffix structures" "This is the hard version of the problem. The only differences between the two versions of this problem are the constraints on k. You can make hacks only if all versions of the problem are solved.
+You are given integers n, p and k. p is guaranteed to be a prime number. 
+For each r from 0 to k, find the number of n\xc3\x97n matrices A of the field\xe2\x80\xa0 of integers modulo p such that the rank\xe2\x80\xa1 of A is exactly r. Since these values are big, you are only required to output them modulo 998244353.
+\xe2\x80\xa0 https://en.wikipedia.org/wiki/Field_(mathematics)
+\xe2\x80\xa1 https://en.wikipedia.org/wiki/Rank_(linear_algebra)
+The first line of input contains three integers n, p and k (1\xe2\x89\xa4n\xe2\x89\xa41018, 2\xe2\x89\xa4p<998244353, 0\xe2\x89\xa4k\xe2\x89\xa45\xe2\x8b\x85105).
+It is guaranteed that p is a prime number.
+Output k+1 integers, the answers for each r from 0 to k." "2700  x539"
+1916H1 "Matrix Rank (Easy Version)" "brute force, combinatorics, dp, math, matrices" "This is the easy version of the problem. The only differences between the two versions of this problem are the constraints on k. You can make hacks only if all versions of the problem are solved.
+You are given integers n, p and k. p is guaranteed to be a prime number. 
+For each r from 0 to k, find the number of n\xc3\x97n matrices A of the field\xe2\x80\xa0 of integers modulo p such that the rank\xe2\x80\xa1 of A is exactly r. Since these values are big, you are only required to output them modulo 998244353.
+\xe2\x80\xa0 https://en.wikipedia.org/wiki/Field_(mathematics)
+\xe2\x80\xa1 https://en.wikipedia.org/wiki/Rank_(linear_algebra)
+The first line of input contains three integers n, p and k (1\xe2\x89\xa4n\xe2\x89\xa41018, 2\xe2\x89\xa4p<998244353, 0\xe2\x89\xa4k\xe2\x89\xa45000).
+It is guaranteed that p is a prime number.
+Output k+1 integers, the answers for each r from 0 to k." "2700  x616"
+1916G "Optimizations From Chelsu" "divide and conquer, dp, number theory, trees" "You are given a tree with n vertices, whose vertices are numbered from 1 to n. Each edge is labeled with some integer wi.
+Define len(u,v) as the number of edges in the simple path between vertices u and v, and gcd(u,v) as the Greatest Common Divisor of all numbers written on the edges of the simple path between vertices u and v. For example, len(u,u)=0 and gcd(u,u)=0 for any 1\xe2\x89\xa4u\xe2\x89\xa4n.
+You need to find the maximum value of len(u,v)\xe2\x8b\x85gcd(u,v) over all pairs of vertices in the tree.
+Each test consists of multiple test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. This is followed by their description.
+The first line of each test case contains the number n (2\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the number of vertices in the tree.
+The next n\xe2\x88\x921 lines specify the edges in the format u, v, w (1\xe2\x89\xa4u,v\xe2\x89\xa4n, 1\xe2\x89\xa4w\xe2\x89\xa41012).
+It is guaranteed that the sum of n over all test cases does not exceed 105.
+For each test case, output a single number equal to the maximum value of len(u,v)\xe2\x8b\x85gcd(u,v) over all pairs of vertices in the tree." "3500  x149"
+1916F "Group Division" "constructive algorithms, dfs and similar, graphs, greedy" "In the 3131st lyceum, there were two groups of olympiad participants: computer science and mathematics. The number of computer scientists was n1, and the number of mathematicians was n2. It is not known for certain who belonged to which group, but it is known that there were friendly connections between some pairs of people (these connections could exist between a pair of people from the same group or from different groups).
+The connections were so strong that even if one person is removed along with all their friendly connections, any pair of people still remains acquainted either directly or through mutual friends.
+\xe2\x80\xa0 More formally, two people (x,y) are acquainted in the following case: there are people a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n1+n2) such that the following conditions are simultaneously met:
+\xe2\x88\x99 Person x is directly acquainted with a1.
+\xe2\x88\x99 Person an is directly acquainted with y.
+\xe2\x88\x99 Person ai is directly acquainted with ai+1 for any (1\xe2\x89\xa4i\xe2\x89\xa4n\xe2\x88\x921).
+The teachers were dissatisfied with the fact that computer scientists were friends with mathematicians and vice versa, so they decided to divide the students into two groups in such a way that the following two conditions are met:
+\xe2\x88\x99 There were n1 people in the computer science group, and n2 people in the mathematics group.
+\xe2\x88\x99 Any pair of computer scientists should be acquainted (acquaintance involving mutual friends, who must be from the same group as the people in the pair, is allowed), the same should be true for mathematicians.
+Help them solve this problem and find out who belongs to which group.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases. Then follows the description of the test cases.
+The first line of each test case contains three integers n1, n2, and m (1\xe2\x89\xa4n1,n2\xe2\x89\xa42000, 1\xe2\x89\xa4m\xe2\x89\xa45000). n1, n2 are the sizes of the two groups described in the problem, and m is the number of friendly connections initially.
+The following m lines describe the friendly connections: in the i-th (1\xe2\x89\xa4i\xe2\x89\xa4m) line, a pair of numbers (a,b) is given, which means that the person with number a is friends with the person with number b (and vice versa).
+It is guaranteed that for each test case, all friendly connections are distinct.
+It is guaranteed that the sum of n1+n2 for all test cases does not exceed 2000, and the sum of m for all test cases does not exceed 5000.
+It is also guaranteed that for each test case, a solution exists.
+If there are several answers, print any of them.
+For each test case, output two lines.
+In the first line, output n1 distinct numbers ai (1\xe2\x89\xa4ai\xe2\x89\xa4n1+n2) \xe2\x80\x94 the people belonging to the first group.
+In the second line, output n2 distinct numbers bi (1\xe2\x89\xa4bi\xe2\x89\xa4n1+n2) \xe2\x80\x94 the people belonging to the second group.
+All numbers must be distinct.
+If there are several possible answers, print any one.
+Consider the third test case. The division into groups looks as follows: 
+Consider all pairs of computer scientists and how they are acquainted:
+Pairs (4,5),(4,6) are directly acquainted.
+Pair (5,6) is acquainted through the computer scientist with number 4.
+Consider all pairs of mathematicians and how they are acquainted:
+Pairs (1,2),(2,3) are directly acquainted.
+Pair (1,3) is acquainted through the mathematician with number 2.
+We conclude that any pair of people belonging to the same group is acquainted with each other, thus the division into two groups is correct." "2900  x499"
+1916E "Happy Life in University" "data structures, dfs and similar, greedy, trees" "Egor and his friend Arseniy are finishing school this year and will soon enter university. And since they are very responsible guys, they have started preparing for admission already.
+First of all, they decided to take care of where they will live for the long four years of study, and after visiting the university\'s website, they found out that the university dormitory can be represented as a root tree with nn vertices with the root at vertex 1. In the tree, each vertex represents a recreation with some type of activity ai. The friends need to choose 2 recreations (not necessarily different) in which they will settle. The guys are convinced that the more the value of the following function f(u,v)=diff(u,lca(u,v))\xe2\x8b\x85diff(v,lca(u,v)), the more fun their life will be. Help Egor and Arseniy and find the maximum value of f(u,v) among all pairs of recreations!
+\xe2\x80\xa0diff(u,v) \xe2\x80\x94 the number of different activities listed on the simple path from vertex u to vertex v.
+\xe2\x80\xa0lca(u,v) \xe2\x80\x94 a vertex p such that it is at the maximum distance from the root and is a parent of both vertex u and vertex v.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4105) \xe2\x80\x94 the number of test cases. Then follows the description of the test cases.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa43\xe2\x8b\x85105).
+The second line of each test case contains n\xe2\x88\x921 integers p2,p3,\xe2\x80\xa6,pn (1\xe2\x89\xa4pi\xe2\x89\xa4i\xe2\x88\x921), where pi \xe2\x80\x94 the parent of vertex i.
+The third line of each test case contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4n), where ai \xe2\x80\x94 the number of the activity located at vertex i.
+It is guaranteed that the sum of n over all test cases does not exceed 3\xe2\x8b\x85105.
+For each test case, output the maximum value of f(u,v) for all pairs of recreations (u,v).
+Consider the fourth test case. The tree has the following structure: " "2300  x2277"
+1916D "Mathematical Problem" "brute force, constructive algorithms, geometry, math" "The mathematicians of the 31st lyceum were given the following task:
+You are given an odd number n, and you need to find n different numbers that are squares of integers. But it\'s not that simple. Each number should have a length of n (and should not have leading zeros), and the multiset of digits of all the numbers should be the same. For example, for 234 and 432, and 11223 and 32211, the multisets of digits are the same, but for 123 and 112233, they are not.
+The mathematicians couldn\'t solve this problem. Can you?
+The first line contains an integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases.
+The following t lines contain one odd integer n (1\xe2\x89\xa4n\xe2\x89\xa499) \xe2\x80\x94 the number of numbers to be found and their length.
+It is guaranteed that the solution exists within the given constraints.
+It is guaranteed that the sum of n2 does not exceed 105.
+The numbers can be output in any order.
+For each test case, you need to output n numbers of length n \xe2\x80\x94 the answer to the problem.
+If there are several answers, print any of them.
+Below are the squares of the numbers that are the answers for the second test case:
+169 = 132
+196 = 142
+961 = 312
+Below are the squares of the numbers that are the answers for the third test case:
+16384 = 1282
+31684 = 1782
+36481 = 1912
+38416 = 1962
+43681 = 2092" "1700  x8588"
+1916C "Training Before the Olympiad" "constructive algorithms, games, greedy, implementation, math" "Masha and Olya have an important team olympiad coming up soon. In honor of this, Masha, for warm-up, suggested playing a game with Olya:
+There is an array a of size n. Masha goes first, and the players take turns. Each move is described by the following sequence of actions:
+\xe2\x88\x99 If the size of the array is 1, the game ends.
+\xe2\x88\x99 The player who is currently playing chooses two different indices i, j (1\xe2\x89\xa4i,j\xe2\x89\xa4|a|), and performs the following operation \xe2\x80\x94 removes ai and aj from the array and adds to the array a number equal to \xe2\x8c\x8aai+aj2\xe2\x8c\x8b\xe2\x8b\x852. In other words, first divides the sum of the numbers ai, aj by 2 rounding down, and then multiplies the result by 2.
+Masha aims to maximize the final number, while Olya aims to minimize it.
+Masha and Olya decided to play on each non-empty prefix of the initial array a, and asked for your help.
+For each k=1,2,\xe2\x80\xa6,n, answer the following question. Let only the first k elements of the array a be present in the game, with indices 1,2,\xe2\x80\xa6,k respectively. What number will remain at the end with optimal play by both players?
+The first line contains an integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the size of the array.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the array on which Masha and Olya play.
+It is guaranteed that the sum of n over all test cases does not exceed 105.
+For each test case, output n integers. The k-th of these numbers should be equal to the number that will remain at the end with optimal play by both players, on the array consisting of the first k elements of the array a.
+In the third test case, for a prefix of length 1, the answer is 3. For a prefix of length 2, Masha has only one move, so the answer is 12. For a prefix of length 3, Masha has three possible moves: she chooses 3 and 10, then the final number is 22, 3 and 11, then the final number is 24, 10 and 11, then the final number is 22, so Masha will choose 3 and 11 and get 24." "1200  x17981"
+1916B "Two Divisors" "constructive algorithms, math, number theory" "A certain number 1\xe2\x89\xa4x\xe2\x89\xa41091\xe2\x89\xa4x\xe2\x89\xa4109 is chosen. You are given two integers a and b, which are the two largest divisors of the number x. At the same time, the condition 1\xe2\x89\xa4a<b<x is satisfied.
+For the given numbers a, b, you need to find the value of x.
+\xe2\x80\xa0 The number y is a divisor of the number x if there is an integer k such that x=y\xe2\x8b\x85k.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. Then follows the description of the test cases.
+The only line of each test cases contains two integers a, b (1\xe2\x89\xa4a<b\xe2\x89\xa4109).
+It is guaranteed that a, b are the two largest divisors for some number 1\xe2\x89\xa4x\xe2\x89\xa4109.
+For each test case, output the number x, such that a and b are the two largest divisors of the number x.
+If there are several answers, print any of them.
+For the first test case, all divisors less than 6 are equal to [1,2,3], among them the two largest will be 2 and 3.
+For the third test case, all divisors less than 33 are equal to [1,3,11], among them the two largest will be 3 and 11.
+For the fifth test case, all divisors less than 20 are equal to [1,2,4,5,10], among them the two largest will be 5 and 10.
+For the sixth test case, all divisors less than 12 are equal to [1,2,3,4,6], among them the two largest will be 4 and 6." "1000  x26130"
+1916A 2023 "constructive algorithms, implementation, math, number theory" "In a sequence a, whose product was equal to 2023, k numbers were removed, leaving a sequence b of length n. Given the resulting sequence b, find any suitable sequence a and output which k elements were removed from it, or state that such a sequence could not have existed.
+Notice that you are not guaranteed that such array exists.
+Each test consists of several test cases. The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases. This is followed by a description of the test cases.
+The first line of each test case contains two integers n (1\xe2\x89\xa4n,k\xe2\x89\xa45) \xe2\x80\x94 the size of sequence b and the number of numbers removed from sequence a.
+The second line contains n integers b1,b2,\xe2\x80\xa6,bn (1\xe2\x89\xa4bi\xe2\x89\xa42023) \xe2\x80\x94 the remaining sequence. The values of bi might not be divisors of 2023.
+For each test case, output ""YES"" if the sequence a exists, and in the following line output k non-negative integers that were removed from the sequence a. If the sequence a does not exist, output ""NO"" in a single line.
+You can output the answer in any case (uppercase or lowercase). For example, the strings ""yEs"", ""yes"", ""Yes"", and ""YES"" will be recognized as positive answers.
+In third test case product is equal to 289\xe2\x8b\x857=2023.
+In fourth test case product is already equal to 2023.
+In seventh test case product is equal to 7\xe2\x8b\x8517\xe2\x8b\x8517=2023." "800  x26140"
+1915G Bicycles "graphs, greedy, implementation, shortest paths, sortings" "All of Slavic\'s friends are planning to travel from the place where they live to a party using their bikes. And they all have a bike except Slavic. There are n cities through which they can travel. They all live in the city 1 and want to go to the party located in the city n. The map of cities can be seen as an undirected graph with n nodes and m edges. Edge i connects cities ui and vi and has a length of wi.
+Slavic doesn\'t have a bike, but what he has is money. Every city has exactly one bike for sale. The bike in the i-th city has a slowness factor of si. Once Slavic buys a bike, he can use it whenever to travel from the city he is currently in to any neighboring city, by taking wi\xe2\x8b\x85sj time, considering he is traversing edge i using a bike j he owns.
+Slavic can buy as many bikes as he wants as money isn\'t a problem for him. Since Slavic hates traveling by bike, he wants to get from his place to the party in the shortest amount of time possible. And, since his informatics skills are quite rusty, he asks you for help.
+What\'s the shortest amount of time required for Slavic to travel from city 1 to city n? Slavic can\'t travel without a bike. It is guaranteed that it is possible for Slavic to travel from city 1 to any other city.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains two space-separated integers n and m (2\xe2\x89\xa4n\xe2\x89\xa41000; n\xe2\x88\x921\xe2\x89\xa4m\xe2\x89\xa41000) \xe2\x80\x94 the number of cities and the number of roads, respectively.
+The i-th of the following m lines each contain three integers ui, vi, wi (1\xe2\x89\xa4ui,vi\xe2\x89\xa4n, ui\xe2\x89\xa0vi; 1\xe2\x89\xa4wi\xe2\x89\xa4105), denoting that there is a road between cities ui and vi of length wi. The same pair of cities can be connected by more than one road.
+The next line contains n integers s1,\xe2\x80\xa6,sn (1\xe2\x89\xa4si\xe2\x89\xa41000) \xe2\x80\x94 the slowness factor of each bike.
+The sum of n over all test cases does not exceed 1000, and the sum of m over all test cases does not exceed 1000.
+Additional constraint on the input: it is possible to travel from city 1 to any other city.
+For each test case, output a single integer denoting the shortest amount of time Slavic can reach city n starting from city 1." "1800  x6518"
+1915F Greetings "data structures, divide and conquer, sortings" "There are n people on the number line; the i-th person is at point ai and wants to go to point bi. For each person, ai<bi, and the starting and ending points of all people are distinct. (That is, all of the 2n numbers a1,a2,\xe2\x80\xa6,an,b1,b2,\xe2\x80\xa6,bn are distinct.) 
+All the people will start moving simultaneously at a speed of 1 unit per second until they reach their final point bi. When two people meet at the same point, they will greet each other once. How many greetings will there be?
+Note that a person can still greet other people even if they have reached their final point.
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. The description of test cases follows.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of people.
+Then n lines follow, the i-th of which contains two integers ai and bi (\xe2\x88\x92109\xe2\x89\xa4ai<bi\xe2\x89\xa4109) \xe2\x80\x94 the starting and ending positions of each person.
+For each test case, all of the 2n numbers a1,a2,\xe2\x80\xa6,an,b1,b2,\xe2\x80\xa6,bn are distinct.
+The sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output a single integer denoting the number of greetings that will happen.
+In the first test case, the two people will meet at point 3 and greet each other." "1500  x14037"
+1915E "Romantic Glasses" "data structures, greedy, math" "Iulia has nn glasses arranged in a line. The ii-th glass has aiai units of juice in it. Iulia drinks only from odd-numbered glasses, while her date drinks only from even-numbered glasses.
+To impress her date, Iulia wants to find a contiguous subarray of these glasses such that both Iulia and her date will have the same amount of juice in total if only the glasses in this subarray are considered. Please help her to do that.
+More formally, find out if there exists two indices ll, rr such that 1\xe2\x89\xa4l\xe2\x89\xa4r\xe2\x89\xa4n1\xe2\x89\xa4l\xe2\x89\xa4r\xe2\x89\xa4n, and al+al+2+al+4+\xe2\x8b\xaf+ar=al+1+al+3+\xe2\x8b\xaf+ar\xe2\x88\x921 if l and r have the same parity and al+al+2+al+4+\xe2\x8b\xaf+ar\xe2\x88\x921=al+1+al+3+\xe2\x8b\xaf+ar otherwise.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the total number of glasses.
+The second line of each test case contains n integers a1,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the amount of juice in each glass.
+The sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output ""YES"" if there exists a subarray satisfying the condition, and ""NO"" otherwise.
+You can output the answer in any case (for example, the strings ""yEs"", ""yes"", ""Yes"" and ""YES"" will be recognized as a positive answer).
+In the first test case, Iulia can pick l=1 and r=3. Then she drinks a1+a3=1+2=3 units and her date drinks a2=3 units of juice.
+In the second test case, Iulia can pick l=2 and r=5. Then she drinks a3+a5=1+1=2 units and her date drinks a2+a4=1+1=2 units of juice.
+In the third test case no such contiguous subarray works.
+In the fourth test case, Iulia can pick l=2 and r=8. Then she drinks a3+a5+a7=11+1+1=13 units and her date drinks a2+a4+a6+a8=2+4+5+2=13 units of juice." "1300  x22227"
+1915D "Unnatural Language Processing" "greedy, implementation, strings" "Lura was bored and decided to make a simple language using the five letters a, b, c, d, e. There are two types of letters: 
+A word in the language is a sequence of syllables. Lura has written a word in the language, but she doesn\'t know how to split it into syllables. Help her break the word into syllables.
+For example, given the word bacedbab, it would be split into syllables as ba.ced.bab (the dot . represents a syllable boundary).
+The input consists of multiple test cases. The first line contains an integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of test cases. The description of the test cases follows.
+The first line of each test case contains an integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the length of the word.
+The second line of each test case contains a string consisting of n lowercase Latin characters  \xe2\x80\x94 the word. 
+All words given are valid words in the language; that is, they only use the letters a, b, c, d, e, and each word is made up of several syllables.
+The sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For test case, output a string denoting the word split into syllables by inserting a dot . between every pair of adjacent syllables.
+If there are multiple possible splittings, output any of them. The input is given in such a way that at least one possible splitting exists." "900  x30562"
+1915C "Can I Square?" "binary search, implementation" "Calin has n buckets, the i-th of which contains ai wooden squares of side length 1.
+Can Calin build a square using all the given squares?
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of buckets.
+The second line of each test case contains n integers a1,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4109) \xe2\x80\x94 the number of squares in each bucket.
+The sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output ""YES"" if Calin can build a square using all of the given 1\xc3\x971 squares, and ""NO"" otherwise.
+You can output the answer in any case (for example, the strings ""yEs"", ""yes"", ""Yes"" and ""YES"" will be recognized as a positive answer).
+In the first test case, Calin can build a 3\xc3\x973 square.
+In the second test case, Calin can build a 4\xc3\x974 square.
+In the third test case, Calin cannot build a square using all the given squares." "800  x43389"
+1915B "Not Quite Latin Square" "bitmasks, brute force, implementation" "A Latin square is a 3\xc3\x973 grid made up of the letters A, B, and C such that: 
+You are given a Latin square, but one of the letters was replaced with a question mark ?. Find the letter that was replaced.
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4108) \xe2\x80\x94 the number of testcases.
+Each test case contains three lines, each consisting of three characters, representing the Latin square. Each character is one of A, B, C, or ?.
+Each test case is a Latin square with exactly one of the letters replaced with a question mark ?.
+For each test case, output the letter that was replaced.
+The correct Latin squares for the three test cases are shown below:
+[ABCCABBCA][BCACABABC][CABBCAABC]" "800  x42791"
+1915A "Odd One Out" "bitmasks, implementation" "You are given three digits a, b, c. Two of them are equal, but the third one is different from the other two. 
+Find the value that occurs exactly once.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4270) \xe2\x80\x94 the number of test cases.
+The only line of each test case contains three digits a, b, c (0\xe2\x89\xa4a, b, c\xe2\x89\xa49). Two of the digits are equal, but the third one is different from the other two.
+For each test case, output the value that occurs exactly once." "800  x58358"
+1914G2 "Light Bulbs (Hard Version)" "combinatorics, data structures, dfs and similar, dp, graphs, hashing" "The easy and hard versions of this problem differ only in the constraints on n. In the hard version, the sum of values of n over all test cases does not exceed 2\xe2\x8b\x85105. Furthermore, there are no additional constraints on the value of n in a single test case.
+There are 2n light bulbs arranged in a row. Each light bulb has a color from 1 to n (exactly two light bulbs for each color).
+Initially, all light bulbs are turned off. You choose a set of light bulbs S that you initially turn on. After that, you can perform the following operations in any order any number of times:
+You want to choose a set of light bulbs S that you initially turn on in such a way that by performing the described operations, you can ensure that all light bulbs are turned on.
+Calculate two numbers:
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. Then follow the descriptions of the test cases.
+The first line of each test case contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of pairs of light bulbs.
+The second line of each test case contains 2n integers c1,c2,\xe2\x80\xa6,c2n (1\xe2\x89\xa4ci\xe2\x89\xa4n), where ci is the color of the i-th light bulb. For each color from 1 to n, exactly two light bulbs have this color.
+Additional constraint on the input: the sum of values of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output two integers:" "2300  x1408"
+1914G1 "Light Bulbs (Easy Version)" "brute force, combinatorics, dfs and similar, dp, dsu, graphs, math, trees" "The easy and hard versions of this problem differ only in the constraints on n. In the easy version, the sum of values of n2 over all test cases does not exceed 106. Furthermore, n does not exceed 1000 in each test case.
+There are 2n light bulbs arranged in a row. Each light bulb has a color from 1 to n (exactly two light bulbs for each color).
+Initially, all light bulbs are turned off. You choose a set of light bulbs S that you initially turn on. After that, you can perform the following operations in any order any number of times:
+You want to choose a set of light bulbs S that you initially turn on in such a way that by performing the described operations, you can ensure that all light bulbs are turned on.
+Calculate two numbers:
+The first line of the input contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. Then follow the descriptions of the test cases.
+The first line of each test case contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa41000) \xe2\x80\x94 the number of pairs of light bulbs.
+The second line of each test case contains 2n integers c1,c2,\xe2\x80\xa6,c2n (1\xe2\x89\xa4ci\xe2\x89\xa4n), where ci is the color of the i-th light bulb. For each color from 1 to n, exactly two light bulbs have this color.
+Additional constraint on the input: the sum of values of n2 over all test cases does not exceed 106.
+For each test case, output two integers:" "2100  x1923"
+1914F "Programming Competition" "dfs and similar, dp, graph matchings, greedy, trees" "BerSoft is the biggest IT corporation in Berland. There are n employees at BerSoft company, numbered from 1 to n. 
+The first employee is the head of the company, and he does not have any superiors. Every other employee i has exactly one direct superior pi.
+Employee x is considered to be a superior (direct or indirect) of employee y if one of the following conditions holds: 
+The structure of BerSoft is organized in such a way that the head of the company is superior of every employee.
+A programming competition is going to be held soon. Two-person teams should be created for this purpose. However, if one employee in a team is the superior of another, they are uncomfortable together. So, teams of two people should be created so that no one is the superior of the other. Note that no employee can participate in more than one team.
+Your task is to calculate the maximum possible number of teams according to the aforementioned rules.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains a single integer n (2\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of employees.
+The second line contains n\xe2\x88\x921 integers p2,p3,\xe2\x80\xa6,pn (1\xe2\x89\xa4pi\xe2\x89\xa4n), where pi is the index of the direct superior of the i-th employee.
+The sum of n over all test cases doesn\'t exceed 2\xe2\x8b\x85105.
+For each test case, print a single integer \xe2\x80\x94 the maximum possible number of teams according to the aforementioned rules.
+In the first test case, team (3,4) can be created.
+In the second test case, no team can be created, because there are only 2 employees and one is the superior of another.
+In the third test case, team (2,3) can be created.
+In the fourth test case, teams (2,4), (3,5) and (6,7) can be created.
+In the fifth test case, teams (2,3), (6,4) and (5,7) can be created." "1900  x4178"
+1914E2 "Game with Marbles (Hard Version)" "games, greedy, sortings" "The easy and hard versions of this problem differ only in the constraints on the number of test cases and n. In the hard version, the number of test cases does not exceed 104, and the sum of values of n over all test cases does not exceed 2\xe2\x8b\x85105. Furthermore, there are no additional constraints on n in a single test case.
+Recently, Alice and Bob were given marbles of n different colors by their parents. Alice has received a1 marbles of color 1, a2 marbles of color 2,..., an marbles of color n. Bob has received b1 marbles of color 1, b2 marbles of color 2, ..., bn marbles of color n. All ai and bi are between 1 and 109.
+After some discussion, Alice and Bob came up with the following game: players take turns, starting with Alice. On their turn, a player chooses a color i such that both players have at least one marble of that color. The player then discards one marble of color i, and their opponent discards all marbles of color i. The game ends when there is no color i such that both players have at least one marble of that color.
+The score in the game is the difference between the number of remaining marbles that Alice has and the number of remaining marbles that Bob has at the end of the game. In other words, the score in the game is equal to (A\xe2\x88\x92B), where A is the number of marbles Alice has and B is the number of marbles Bob has at the end of the game. Alice wants to maximize the score, while Bob wants to minimize it.
+Calculate the score at the end of the game if both players play optimally.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case consists of three lines:
+Additional constraint on the input: the sum of n for all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, output a single integer \xe2\x80\x94 the score at the end of the game if both Alice and Bob act optimally.
+In the first example, one way to achieve a score of 1 is as follows: 
+As a result, Alice has a=[3,1,0] remaining, and Bob has b=[0,0,3] remaining. The score is 3+1\xe2\x88\x923=1.
+It can be shown that neither Alice nor Bob can achieve a better score if both play optimally.
+In the second example, Alice can first choose color 1, then Bob will choose color 4, after which Alice will choose color 2, and Bob will choose color 3. It can be shown that this is the optimal game." "1400  x12568"
+1914E1 "Game with Marbles (Easy Version)" "brute force, games, greedy, sortings" "The easy and hard versions of this problem differ only in the constraints on the number of test cases and nn. In the easy version, the number of test cases does not exceed 103, and n does not exceed 6.
+Recently, Alice and Bob were given marbles of n different colors by their parents. Alice has received a1 marbles of color 1, a2 marbles of color 2,..., an marbles of color n. Bob has received b1 marbles of color 1, b2 marbles of color 2, ..., bn marbles of color n. All ai and bi are between 1 and 109.
+After some discussion, Alice and Bob came up with the following game: players take turns, starting with Alice. On their turn, a player chooses a color i such that both players have at least one marble of that color. The player then discards one marble of color i, and their opponent discards all marbles of color i. The game ends when there is no color i such that both players have at least one marble of that color.
+The score in the game is the difference between the number of remaining marbles that Alice has and the number of remaining marbles that Bob has at the end of the game. In other words, the score in the game is equal to (A\xe2\x88\x92B), where A is the number of marbles Alice has and B is the number of marbles Bob has at the end of the game. Alice wants to maximize the score, while Bob wants to minimize it.
+Calculate the score at the end of the game if both players play optimally.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4103) \xe2\x80\x94 the number of test cases.
+Each test case consists of three lines:
+For each test case, output a single integer \xe2\x80\x94 the score at the end of the game if both Alice and Bob act optimally.
+In the first example, one way to achieve a score of 1 is as follows: 
+As a result, Alice has a=[3,1,0] remaining, and Bob has b=[0,0,3] remaining. The score is 3+1\xe2\x88\x923=1.
+It can be shown that neither Alice nor Bob can achieve a better score if both play optimally.
+In the second example, Alice can first choose color 1, then Bob will choose color 4, after which Alice will choose color 2, and Bob will choose color 3. It can be shown that this is the optimal game." "1400  x12364"
+1914D "Three Activities" "brute force, dp, greedy, implementation, sortings" "Winter holidays are coming up. They are going to last for nn days.
+During the holidays, Monocarp wants to try all of these activities exactly once with his friends: 
+Monocarp knows that, on the i-th day, exactly ai friends will join him for skiing, bi friends will join him for a movie and ci friends will join him for board games.
+Monocarp also knows that he can\'t try more than one activity in a single day.
+Thus, he asks you to help him choose three distinct days x,y,z in such a way that the total number of friends to join him for the activities (ax+by+cz) is maximized.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of testcases.
+The first line of each testcase contains a single integer n (3\xe2\x89\xa4n\xe2\x89\xa4105) \xe2\x80\x94 the duration of the winter holidays in days.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4108) \xe2\x80\x94 the number of friends that will join Monocarp for skiing on the i-th day.
+The third line contains n integers b1,b2,\xe2\x80\xa6,bn (1\xe2\x89\xa4bi\xe2\x89\xa4108) \xe2\x80\x94 the number of friends that will join Monocarp for a movie on the i-th day.
+The fourth line contains n integers c1,c2,\xe2\x80\xa6,cn (1\xe2\x89\xa4ci\xe2\x89\xa4108) \xe2\x80\x94 the number of friends that will join Monocarp for board games on the i-th day.
+The sum of n over all testcases doesn\'t exceed 105.
+For each testcase, print a single integer \xe2\x80\x94 the maximum total number of friends that can join Monocarp for the activities on three distinct days.
+In the first testcase, Monocarp can choose day 2 for skiing, day 1 for a movie and day 3 for board games. This way, a2=10 friends will join him for skiing, b1=10 friends will join him for a movie and c3=10 friends will join him for board games. The total number of friends is 30.
+In the second testcase, Monocarp can choose day 1 for skiing, day 4 for a movie and day 2 for board games. 30+20+25=75 friends in total. Note that Monocarp can\'t choose day 1 for all activities, because he can\'t try more than one activity in a single day.
+In the third testcase, Monocarp can choose day 2 for skiing, day 3 for a movie and day 7 for board games. 19+19+17=55 friends in total.
+In the fourth testcase, Monocarp can choose day 1 for skiing, day 4 for a movie and day 9 for board games. 17+19+20=56 friends in total." "1200  x22297"
+1914C Quests "greedy, math" "Monocarp is playing a computer game. In order to level up his character, he can complete quests. There are nn quests in the game, numbered from 1 to n.
+Monocarp can complete quests according to the following rules: 
+Note that Monocarp can complete the same quest multiple times.
+For each completion, the character gets some amount of experience points: 
+Monocarp is a very busy person, so he has free time to complete no more than k quests. Your task is to calculate the maximum possible total experience Monocarp can get if he can complete no more than k quests.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+The first line of each test case contains two integers n and k (1\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105; 1\xe2\x89\xa4k\xe2\x89\xa42\xe2\x8b\x85105) \xe2\x80\x94 the number of quests and the maximum number of quests Monocarp can complete, respectively.
+The second line contains n integers a1,a2,\xe2\x80\xa6,an (1\xe2\x89\xa4ai\xe2\x89\xa4103).
+The third line contains n integers b1,b2,\xe2\x80\xa6,bn (1\xe2\x89\xa4bi\xe2\x89\xa4103).
+Additional constraint on the input: the sum of n over all test cases does not exceed 2\xe2\x8b\x85105.
+For each test case, print a single integer \xe2\x80\x94 the maximum possible total experience Monocarp can get if he can complete no more than k quests.
+In the first test case, one of the possible quest completion sequences is as follows: 1,1,2,3,2,4,4; its total experience is equal to 4_+1+3_+1_+1+2_+1=13 (the underlined numbers correspond to the instances when we complete a quest for the first time).
+In the second test case, one of the possible quest completion sequences is as follows: 1,1; its total experience is equal to 1_+3=4.
+In the third test case, one of the possible quest completion sequences is as follows: 1,2,2,2,3; its total experience is equal to 3_+2_+3+3+4_=15." "1100  x24637"
+1914B "Preparing for the Contest" "constructive algorithms, math" "Monocarp is practicing for a big contest. He plans to solve n problems to make sure he\'s prepared. Each of these problems has a difficulty level: the first problem has a difficulty level of 1, the second problem has a difficulty level of 2, and so on, until the last (n-th) problem, which has a difficulty level of n.
+Monocarp will choose some order in which he is going to solve all n problems. Whenever he solves a problem which is more difficult than the last problem he solved, he gets excited because he feels like he\'s progressing. He doesn\'t get excited when he solves the first problem in his chosen order.
+For example, if Monocarp solves the problems in the order [3,5_,4,1,6_,2], he gets excited twice (the corresponding problems are underlined).
+Monocarp wants to get excited exactly k times during his practicing session. Help him to choose the order in which he has to solve the problems!
+The first line contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa41000) \xe2\x80\x94 the number of test cases.
+Each test case consists of one line containing two integers n and k (2\xe2\x89\xa4n\xe2\x89\xa450; 0\xe2\x89\xa4k\xe2\x89\xa4n\xe2\x88\x921).
+For each test case, print n distinct integers from 1 to n, denoting the order in which Monocarp should solve the problems. If there are multiple answers, print any of them.
+It can be shown that under the constraints of the problem, the answer always exists." "800  x30529"
+1914A "Problemsolving Log" "implementation, strings" "Monocarp is participating in a programming contest, which features 26 problems, named from \'A\' to \'Z\'. The problems are sorted by difficulty. Moreover, it\'s known that Monocarp can solve problem \'A\' in 1 minute, problem \'B\' in 2 minutes, ..., problem \'Z\' in 26 minutes.
+After the contest, you discovered his contest log \xe2\x80\x94 a string, consisting of uppercase Latin letters, such that the i-th letter tells which problem Monocarp was solving during the i-th minute of the contest. If Monocarp had spent enough time in total on a problem to solve it, he solved it. Note that Monocarp could have been thinking about a problem after solving it.
+Given Monocarp\'s contest log, calculate the number of problems he solved during the contest.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4100) \xe2\x80\x94 the number of testcases.
+The first line of each testcase contains a single integer n (1\xe2\x89\xa4n\xe2\x89\xa4500) \xe2\x80\x94 the duration of the contest, in minutes.
+The second line contains a string of length exactly n, consisting only of uppercase Latin letters, \xe2\x80\x94 Monocarp\'s contest log.
+For each testcase, print a single integer \xe2\x80\x94 the number of problems Monocarp solved during the contest." "800  x32015"
+1913F "Palindromic Problem" "binary search, data structures, hashing, string suffix structures, strings" "You are given a string s of length n, consisting of lowercase Latin letters.
+You are allowed to replace at most one character in the string with an arbitrary lowercase Latin letter.
+Print the lexicographically minimal string that can be obtained from the original string and contains the maximum number of palindromes as substrings. Note that if a palindrome appears more than once as a substring, it is counted the same number of times it appears.
+The string a is lexicographically smaller than the string b if and only if one of the following holds: 
+The first line contains one integer n (1\xe2\x89\xa4n\xe2\x89\xa43\xe2\x8b\x85105) \xe2\x80\x94 the number of characters in the string.
+The second line contains the string s itself, consisting of exactly n lowercase Latin letters.
+In the first line, print one integer \xe2\x80\x94 the maximum number of palindromic substrings that can be obtained using the operation described in the statement at most once.
+In the second line, print the string that can be obtained from s and has the maximum possible number of palindromic substrings. If there are multiple answers, print the lexicographically smallest one." "2800  x329"
+1913E "Matrix Problem" "flows, graphs" "You are given a matrix a, consisting of n rows by m columns. Each element of the matrix is equal to 0 or 1.
+You can perform the following operation any number of times (possibly zero): choose an element of the matrix and replace it with either 0 or 1.
+You are also given two arrays A and B (of length n and m respectively). After you perform the operations, the matrix should satisfy the following conditions:
+Calculate the minimum number of operations you have to perform.
+The first line contains two integers n and m (2\xe2\x89\xa4n,m\xe2\x89\xa450).
+Then n lines follow. The i-th of them contains m integers ai,1,ai,2,\xe2\x80\xa6,ai,m (0\xe2\x89\xa4ai,j\xe2\x89\xa41).
+The next line contains n integers A1,A2,\xe2\x80\xa6,An (0\xe2\x89\xa4Ai\xe2\x89\xa4m).
+The next line contains m integers B1,B2,\xe2\x80\xa6,Bm (0\xe2\x89\xa4Bi\xe2\x89\xa4n).
+Print one integer \xe2\x80\x94 the minimum number of operations you have to perform, or -1 if it is impossible." "2400  x1048"
+1913D "Array Collapse" "data structures, divide and conquer, dp, trees" "You are given an array [p1,p2,\xe2\x80\xa6,pn], where all elements are distinct.
+You can perform several (possibly zero) operations with it. In one operation, you can choose a contiguous subsegment of p and remove all elements from that subsegment, except for the minimum element on that subsegment. For example, if p=[3,1,4,7,5,2,6] and you choose the subsegment from the 3-rd element to the 6-th element, the resulting array is [3,1,2,6].
+An array a is called reachable if it can be obtained from p using several (maybe zero) aforementioned operations. Calculate the number of reachable arrays, and print it modulo 998244353.
+The first line of the input contains one integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases.
+Each test case consists of two lines. The first line contains one integer n (1\xe2\x89\xa4n\xe2\x89\xa43\xe2\x8b\x85105). The second line contains n distinct integers p1,p2,\xe2\x80\xa6,pn (1\xe2\x89\xa4pi\xe2\x89\xa4109).
+Additional constraint on the input: the sum of n over all test cases does not exceed 3\xe2\x8b\x85105.
+For each test case, print one integer \xe2\x80\x94 the number of reachable arrays, taken modulo 998244353." "2100  x3222"
+1913C "Game with Multiset" "binary search, bitmasks, brute force, greedy" "In this problem, you are initially given an empty multiset. You have to process two types of queries:
+The first line contains one integer m (1\xe2\x89\xa4m\xe2\x89\xa4105) \xe2\x80\x94 the number of queries.
+Then m lines follow, each of which contains two integers ti, vi, denoting the i-th query. If ti=1, then the i-th query is ADD vi (0\xe2\x89\xa4vi\xe2\x89\xa429). If ti=2, then the i-th query is GET vi (0\xe2\x89\xa4vi\xe2\x89\xa4109).
+For each GET query, print YES if it is possible to choose a subset with sum equal to w, or NO if it is impossible." "1300  x15190"
+1913B "Swap and Delete" strings "You are given a binary string s (a string consisting only of 0-s and 1-s).
+You can perform two types of operations on s: 
+You can perform these operations any number of times and in any order.
+Let\'s name a string you\'ve got after performing operations above as t. The string t is good if for each i from 1 to |t| ti\xe2\x89\xa0si (|t| is the length of the string t). The empty string is always good. Note that you are comparing the resulting string t with the initial string s.
+What is the minimum total cost to make the string t good?
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of test cases. Then t test cases follow.
+The only line of each test case contains a binary string s (1\xe2\x89\xa4|s|\xe2\x89\xa42\xe2\x8b\x85105; si\xe2\x88\x88{0, 1}) \xe2\x80\x94 the initial string, consisting of characters 0 and/or 1.
+Additional constraint on the input: the total length of all strings s doesn\'t exceed 2\xe2\x8b\x85105.
+For each test case, print one integer \xe2\x80\x94 the minimum total cost to make string t good.
+In the first test case, you have to delete a character from s to get the empty string t. Only then t becomes good. One deletion costs 1 coin.
+In the second test case, you can, for example, delete the second character from s to get the string 01, and then swap the first and second characters to get the string t = 10. String t is good, since t1\xe2\x89\xa0s1 and t2\xe2\x89\xa0s2. The total cost is 1 coin.
+In the third test case, you can, for example, swap s1 with s2, swap s3 with s4, swap s5 with s7, s6 with s8 and s9 with s10. You\'ll get t = 1010001110. All swap operations are free, so the total cost is 0." "1000  x27673"
+1913A "Rating Increase" implementation "Monocarp is a great solver of adhoc problems. Recently, he participated in an Educational Codeforces Round, and gained rating!
+Monocarp knew that, before the round, his rating was a. After the round, it increased to b (b>a). He wrote both values one after another to not forget them.
+However, he wrote them so close to each other, that he can\'t tell now where the first value ends and the second value starts.
+Please, help him find some values a and b such that: 
+If there are multiple answers, you can print any of them.
+The first line contains a single integer t (1\xe2\x89\xa4t\xe2\x89\xa4104) \xe2\x80\x94 the number of testcases.
+The only line of each testcase consists of a single string ab of length from 2 to 8 that: 
+For each testcase, determine if such values a and b exist. If they don\'t, print -1. Otherwise, print two integers a and b.
+If there are multiple answers, you can print any of them.
+In the second testcase, printing 3 and 91125 is also valid.
+In the third testcase, 20 and 0200 is not valid, because b has a leading zero. 200 and 200 is not valid, because 200 is not strictly greater than 200." "800  x25305"
+1912L "LOL Lovers" strings "There are n food items lying in a row on a long table. Each of these items is either a loaf of bread (denoted as a capital Latin letter \'L\' with ASCII code 76) or an onion (denoted as a capital Latin letter \'O\' with ASCII code 79). There is at least one loaf of bread and at least one onion on the table.
+You and your friend want to divide the food on the table: you will take a prefix of this row (several leftmost items), and the friend will take the rest. However, there are several restrictions: 
+The first line contains one integer n (2\xe2\x89\xa4n\xe2\x89\xa4200) \xe2\x80\x94 the number of food items on the table. The second line contains a string of length n consisting of letters \'L\' and \'O\'. i-th symbol represents the type of the i-th food item on the table: \'L\' stands for a loaf of bread, and \'O\' stands for an onion. It is guaranteed that this string contains at least one letter \'L\' and at least one letter \'O\'.
+Print one integer \xe2\x80\x94 a number k such that, if you take k leftmost items and your friend takes the remaining n\xe2\x88\x92k items, each of you and your friend get at least one item, your number of loaves is different from your friend\'s, and your number of onions is different from your friend\'s. If there are several possible answers, print any of them. If there are no possible answers, print the number \xe2\x88\x921.
+In the first example, in any division the left and the right part contain one loaf of bread.
+In the second example, the division is \'L\' and \'O\', and in these two strings the number of loaves is different (1 and 0) and the number of onions is different (0 and 1).
+In the third example, any number 1, 2 or 3 is a correct answer.
+ " "800  x7112"
+1912K "Kim's Quest" "bitmasks, combinatorics, dp" "In the long-forgotten halls of Kombinatoria\'s ancient academy, a gifted mathematician named Kim is faced with an unusual challenge. They found an old sequence of integers, which is believed to be a cryptic message from the legendary Kombinatoria\'s Oracle, and Kim wants to decipher its hidden meaning.
+Kim\'s mission is to find specific patterns within the sequence, known as Harmonious Subsequences. These are extraordinary subsequences where the sum of every three consecutive numbers is even, and each subsequence must be at least three numbers in length. 
+Given a sequence ai (1\xe2\x89\xa4i\xe2\x89\xa4n) of length n, its subsequence of length m is equal to ab1,ab2,\xe2\x80\xa6,abm and is uniquely defined by a set of m indices bj, such that 1\xe2\x89\xa4b1<b2<\xe2\x80\xa6<bm\xe2\x89\xa4n. Subsequences given by different sets of indices bj are considered different.
+There\'s a twist in Kim\'s quest: the number of these Harmonious Subsequences could be overwhelming. To report the findings effectively, Kim must calculate the total number of these subsequences, presenting the answer as a remainder after dividing by the number 998244353.
+The first line contains a single integer n \xe2\x80\x94 the length of the sequence (3\xe2\x89\xa4n\xe2\x89\xa42\xe2\x8b\x85105).
+The second line contains n space-separated integers ai \xe2\x80\x94 the elements of the sequence (1\xe2\x89\xa4ai\xe2\x89\xa42\xe2\x8b\x85105).
+Output one number \xe2\x80\x94 the number of Harmonious Subsequences, modulo 998244353.
+In the provided input data for the fifth sample, the sequence of numbers is split into three separate lines for clarity, but it should be understood that in the actual test data, the sequence is given in one line. The actual number of Harmonious Subsequences in this example is 4991221765=5\xc3\x97998244353, hence the output is zero as a result of finding its remainder after dividing by the number 998244353." "1800  x2551"
