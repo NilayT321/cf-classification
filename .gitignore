@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# PyTorch models are too big 
+# Will SFTP them instead
+*.pt
+*.pth
+
 # C extensions
 *.so
 
