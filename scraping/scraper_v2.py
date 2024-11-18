@@ -28,7 +28,7 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
 
     # Scraper stopped in the middle. 
     # Restart at page 69
-    for page in range(69, NUM_PAGES + 1):
+    for page in range(1, 2):
     # For the first page, don't do anything. We're already at the landing page 
     # Otherwise, we need to go to a new URL 
         if page != 1:
@@ -81,16 +81,18 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
             try:
                 # Find the link of the problem name and click it 
                 driver.find_element(By.LINK_TEXT, name).click()
+
+                # Get the HTML and create a new parser for it 
+                subpage_source = str(driver.page_source.encode())
+                subpage_parser = BeautifulSoup(subpage_source, "lxml")
+                # Find the div tag of the problem statement
+                prob_div = subpage_parser.find('div', attrs = {'class' : 'problem-statement'})
             except:
                 # No need to do anything fancy. Just move on 
-                continue 
+                pass 
+            finally:
+                driver.back()
             
-            # Get the HTML and create a new parser for it 
-            subpage_source = str(driver.page_source.encode())
-            subpage_parser = BeautifulSoup(subpage_source, "lxml")
-            # Find the div tag of the problem statement
-            prob_div = subpage_parser.find('div', attrs = {'class' : 'problem-statement'})
-
             # Tenth div in the problem statement has the relevant text. 
             # This was manually counted and hard coded. 
             # Of fucking course, this is the only div which doesn't have an id or class
