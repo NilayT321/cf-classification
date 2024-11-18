@@ -23,14 +23,16 @@ page_0 = str(driver.page_source.encode())
 page_0_parser = BeautifulSoup(page_0, "lxml")
 
 # Loop through all the rows. Except first row, which is header 
-with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
+with open("problems81_90.csv", "w", encoding = "utf-8") as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
     # Scraper stopped in the middle. 
-    # Restart at page 69
-    for page in range(2, 3):
-    # For the first page, don't do anything. We're already at the landing page 
-    # Otherwise, we need to go to a new URL 
+    for page in range(81, 91):
+        # Time it 
+        time_start = time.time()
+
+        # For the first page, don't do anything. We're already at the landing page 
+        # Otherwise, we need to go to a new URL 
         if page != 1:
             url = f"https://codeforces.com/problemset/page/{page}"
             driver.get(url)
@@ -110,7 +112,9 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
             # Go back
             driver.back()
         
-        print(f"Finished writing {page}")
+        # End time
+        time_end = time.time()
+        print(f"Finished writing {page}. Took {time_end - time_start} seconds")
             
 
         
