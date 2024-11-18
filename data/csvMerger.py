@@ -14,8 +14,8 @@ with open("mainData/main.csv", "w", encoding = "utf-8", newline = '') as outfile
     for file in files:
         with open(file, "r", encoding = "utf-8", newline = '') as infile:
             infile_reader = csv.reader(infile, delimiter = " ") 
-
-            print(f"Writing {file}. There are {len(list(infile_reader))} rows to be written")
-            for row in infile_reader:
+            row_list = list(infile_reader)
+            print(f"Writing {file}. There are {len(row_list)} rows to be written")
+            for row in row_list:
                 main_writer.writerow(row)
-    
+                print("wtf",row)    
