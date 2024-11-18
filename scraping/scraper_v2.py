@@ -28,7 +28,7 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
 
     # Scraper stopped in the middle. 
     # Restart at page 69
-    for page in range(2, 3):
+    for page in range(91, 100 + 1):
     # For the first page, don't do anything. We're already at the landing page 
     # Otherwise, we need to go to a new URL 
         if page != 1:
