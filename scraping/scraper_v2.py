@@ -36,7 +36,7 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
             driver.get(url)
         
         # Wait for the page to load 
-        time.sleep(8)
+        # time.sleep(8)
 
         # Get the page source 
         source = str(driver.page_source.encode())
