@@ -27,12 +27,10 @@ with open("problems81_90.csv", "w", encoding = "utf-8") as f:
     prob_writer = csv.writer(f, delimiter = " ")
 
     # Scraper stopped in the middle. 
-    for page in range(81, 91):
-        # Time it 
-        time_start = time.time()
-
-        # For the first page, don't do anything. We're already at the landing page 
-        # Otherwise, we need to go to a new URL 
+    # Restart at page 69
+    for page in range(91, 100 + 1):
+    # For the first page, don't do anything. We're already at the landing page 
+    # Otherwise, we need to go to a new URL 
         if page != 1:
             url = f"https://codeforces.com/problemset/page/{page}"
             driver.get(url)
