@@ -28,7 +28,7 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
 
     # Scraper stopped in the middle. 
     # Restart at page 69
-    for page in range(1, 2):
+    for page in range(2, 3):
     # For the first page, don't do anything. We're already at the landing page 
     # Otherwise, we need to go to a new URL 
         if page != 1:
@@ -96,6 +96,9 @@ with open("problemsThirdSet.csv", "w", encoding = "utf-8") as f:
             # Second div has the text
             # Of fucking course, this is the only div which doesn't have an id or class
             
+            if prob_div is None:
+                driver.back()
+                continue
             prob_div = prob_div.find_all('div', recursive = False)[1]
 
             prob_statement = clean_output(prob_div.get_text())
