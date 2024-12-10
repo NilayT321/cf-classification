@@ -1,0 +1,29 @@
+Average Test Loss: 0.756822254170071
+Test Accuracy for Each Tag:
+Tag 'sortings': 83.26%
+Tag 'divide and conquer': 91.63%
+Tag 'probabilities': 83.48%
+Tag 'interactive': 86.48%
+Tag 'bitmasks': 87.12%
+Tag 'math': 73.32%
+Tag 'brute force': 40.70%
+Tag 'data structures': 77.83%
+Tag 'constructive algorithms': 69.38%
+Tag 'number theory': 90.92%
+Tag 'dsu': 66.95%
+Tag 'greedy': 65.38%
+Tag 'games': 38.05%
+Tag 'dp': 71.24%
+Tag 'strings': 47.93%
+Tag 'combinatorics': 89.70%
+Tag 'graphs': 61.95%
+Tag 'implementation': 42.27%
+Tag 'dfs and similar': 74.18%
+Tag 'geometry': 44.99%
+Tag 'shortest paths': 89.20%
+Tag 'hashing': 49.00%
+Tag 'binary search': 47.71%
+Tag 'trees': 82.55%
+Tag 'two pointers': 91.56%
+
+Average Test Accuracy Across All Tags: 69.87%
